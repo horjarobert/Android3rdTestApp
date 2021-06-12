@@ -52,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
     private static final long TOAST_TIMEOUT_MS = 1000;
     private static long lastToastTime = 0;
 
-    private MediaPlayer sound_extinguisher;
+    private MediaPlayer sound_extinguisher, sound_error_prone,
+            sound_btn_a_1, sound_btn_a_2, sound_btn_a_3, sound_btn_a_4, sound_btn_a_5, sound_btn_a_6, sound_btn_a_7,
+            sound_btn_b_1, sound_btn_b_2, sound_btn_b_3, sound_btn_b_4, sound_btn_b_5, sound_btn_b_6, sound_btn_b_7,
+            sound_btn_c_1, sound_btn_c_2, sound_btn_c_3, sound_btn_c_4, sound_btn_c_5, sound_btn_c_6, sound_btn_c_7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
         hideNavigationBar();
     }
 
-    // Set animators
     public void SetAnimators() {
         // Special guest | Animation for btn_a_1
         scaleDown_btn_a_1 = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
@@ -1068,5 +1070,268 @@ public class MainActivity extends AppCompatActivity {
             amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
         }
 
+    }
+
+    public void Btn_a_1(View view) {
+
+        sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+        sound_btn_a_1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_1.start();
+    }
+
+    public void Btn_a_2(View view) {
+
+        sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1);
+        sound_btn_a_2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_2.start();
+    }
+
+    public void Btn_a_3(View view) {
+
+        sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1);
+        sound_btn_a_3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_3.start();
+    }
+
+    public void Btn_a_4(View view) {
+
+        sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1);
+        sound_btn_a_4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_4.start();
+    }
+
+    public void Btn_a_5(View view) {
+
+        sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1);
+        sound_btn_a_5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_5.start();
+    }
+
+    public void Btn_a_6(View view) {
+
+        sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1);
+        sound_btn_a_6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_6.start();
+    }
+
+    public void Btn_a_7(View view) {
+
+        sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1);
+        sound_btn_a_7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_a_7.start();
+    }
+
+    public void Btn_b_1(View view) {
+
+        sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2);
+        sound_btn_b_1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_1.start();
+    }
+
+    public void Btn_b_2(View view) {
+
+        sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2);
+        sound_btn_b_2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_2.start();
+    }
+
+    public void Btn_b_3(View view) {
+
+        sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2);
+        sound_btn_b_3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_3.start();
+    }
+
+    public void Btn_b_4(View view) {
+
+        sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2);
+        sound_btn_b_4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_4.start();
+    }
+
+    public void Btn_b_5(View view) {
+
+        sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2);
+        sound_btn_b_5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_5.start();
+    }
+
+    public void Btn_b_6(View view) {
+
+        sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2);
+        sound_btn_b_6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_6.start();
+    }
+
+    public void Btn_b_7(View view) {
+
+        sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2);
+        sound_btn_b_7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_b_7.start();
+    }
+
+    public void Btn_c_1(View view) {
+
+        sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3);
+        sound_btn_c_1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_1.start();
+    }
+
+    public void Btn_c_2(View view) {
+
+        sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3);
+        sound_btn_c_2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_2.start();
+    }
+
+    public void Btn_c_3(View view) {
+
+        sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3);
+        sound_btn_c_3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_3.start();
+    }
+
+    public void Btn_c_4(View view) {
+
+        sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3);
+        sound_btn_c_4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_4.start();
+    }
+
+    public void Btn_c_5(View view) {
+
+        sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3);
+        sound_btn_c_5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_5.start();
+    }
+
+    public void Btn_c_6(View view) {
+
+        sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3);
+        sound_btn_c_6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_6.start();
+    }
+
+    public void Btn_c_7(View view) {
+
+        sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3);
+        sound_btn_c_7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_c_7.start();
+    }
+
+    public void IncludeLayout(View view) {
+        sound_error_prone = MediaPlayer.create(MainActivity.this, R.raw.errorprone);
+        sound_error_prone.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_error_prone.start();
     }
 }
