@@ -3,8 +3,13 @@ package com.stufflex.digimotion;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.content.Context;
 import android.graphics.Color;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final long TOAST_TIMEOUT_MS = 1000;
     private static long lastToastTime = 0;
+
+    private MediaPlayer sound_extinguisher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +111,15 @@ public class MainActivity extends AppCompatActivity {
         btn_guitar.setVisibility(View.INVISIBLE);
         btn_violin.setVisibility(View.INVISIBLE);
         btn_piano.setVisibility(View.INVISIBLE);
+
+        // Click on main_layout for hiding navbar
+        main_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navbar-fullscreen
+                hideNavigationBar();
+            }
+        });
 
         // Sound buttons
         btn_sound_on.setOnClickListener(new View.OnClickListener() {
@@ -962,6 +978,8 @@ public class MainActivity extends AppCompatActivity {
             lastToastTime = now;
         }
 
+        ExtinguihserSound();
+
     }
 
     public void SoundON() {
@@ -976,6 +994,8 @@ public class MainActivity extends AppCompatActivity {
             lastToastTime = now;
         }
 
+        Mute();
+
     }
 
     public void SoundOFF() {
@@ -989,6 +1009,8 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             lastToastTime = now;
         }
+
+        Unmute();
 
     }
 
@@ -1012,6 +1034,39 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 5000);
 
+
+    }
+
+    public void ExtinguihserSound() {
+        sound_extinguisher = MediaPlayer.create(MainActivity.this, R.raw.romane);
+        sound_extinguisher.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_extinguisher.start();
+    }
+
+    private void Mute() {
+        // Mute audio
+        AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            amanager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0);
+        } else {
+            amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
+        }
+
+    }
+
+    private void Unmute() {
+        // Unmute audio
+        AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            amanager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_UNMUTE, 0);
+        } else {
+            amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
+        }
 
     }
 }
