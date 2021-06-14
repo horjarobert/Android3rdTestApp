@@ -28,24 +28,31 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_b_1, btn_b_2, btn_b_3, btn_b_4, btn_b_5, btn_b_6, btn_b_7;
     private Button btn_c_1, btn_c_2, btn_c_3, btn_c_4, btn_c_5, btn_c_6, btn_c_7;
 
-    private Button btn_sound_on, btn_sound_off, btn_extinguisher, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano;
+    private Button btn_sound_on, btn_sound_off, btn_extinguisher, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano,
+            btn_nr_zero, btn_nr_one, btn_nr_two, btn_nr_three, btn_nr_four, btn_nr_five, btn_nr_six, btn_nr_seven, btn_nr_eight, btn_nr_nine;
 
     private TextView txt_title;
 
     private AnimatorSet setDownAndUp_btn_a_1, setDownAndUp_btn_a_2, setDownAndUp_btn_a_3, setDownAndUp_btn_a_4, setDownAndUp_btn_a_5, setDownAndUp_btn_a_6, setDownAndUp_btn_a_7,
             setDownAndUp_btn_b_1, setDownAndUp_btn_b_2, setDownAndUp_btn_b_3, setDownAndUp_btn_b_4, setDownAndUp_btn_b_5, setDownAndUp_btn_b_6, setDownAndUp_btn_b_7,
             setDownAndUp_btn_c_1, setDownAndUp_btn_c_2, setDownAndUp_btn_c_3, setDownAndUp_btn_c_4, setDownAndUp_btn_c_5, setDownAndUp_btn_c_6, setDownAndUp_btn_c_7,
-            setDownAndUp_btn_drum, setDownAndUp_btn_saxophone, setDownAndUp_btn_trumpet, setDownAndUp_btn_guitar, setDownAndUp_btn_violin, setDownAndUp_btn_piano;
+            setDownAndUp_btn_drum, setDownAndUp_btn_saxophone, setDownAndUp_btn_trumpet, setDownAndUp_btn_guitar, setDownAndUp_btn_violin, setDownAndUp_btn_piano,
+            setDownAndUp_btn_drum_reverse, setDownAndUp_btn_saxophone_reverse, setDownAndUp_btn_trumpet_reverse, setDownAndUp_btn_guitar_reverse,
+            setDownAndUp_btn_violin_reverse, setDownAndUp_btn_piano_reverse;
 
     private Animator scaleDown_btn_a_1, scaleDown_btn_a_2, scaleDown_btn_a_3, scaleDown_btn_a_4, scaleDown_btn_a_5, scaleDown_btn_a_6, scaleDown_btn_a_7;
     private Animator scaleDown_btn_b_1, scaleDown_btn_b_2, scaleDown_btn_b_3, scaleDown_btn_b_4, scaleDown_btn_b_5, scaleDown_btn_b_6, scaleDown_btn_b_7;
     private Animator scaleDown_btn_c_1, scaleDown_btn_c_2, scaleDown_btn_c_3, scaleDown_btn_c_4, scaleDown_btn_c_5, scaleDown_btn_c_6, scaleDown_btn_c_7;
     private Animator scaleDown_btn_drum, scaleDown_btn_saxophone, scaleDown_btn_trumpet, scaleDown_btn_guitar, scaleDown_btn_violin, scaleDown_btn_piano;
+    private Animator scaleDown_btn_drum_reverse, scaleDown_btn_saxophone_reverse, scaleDown_btn_trumpet_reverse, scaleDown_btn_guitar_reverse,
+            scaleDown_btn_violin_reverse, scaleDown_btn_piano_reverse;
 
     private Animator scaleUp_btn_a_1, scaleUp_btn_a_2, scaleUp_btn_a_3, scaleUp_btn_a_4, scaleUp_btn_a_5, scaleUp_btn_a_6, scaleUp_btn_a_7;
     private Animator scaleUp_btn_b_1, scaleUp_btn_b_2, scaleUp_btn_b_3, scaleUp_btn_b_4, scaleUp_btn_b_5, scaleUp_btn_b_6, scaleUp_btn_b_7;
     private Animator scaleUp_btn_c_1, scaleUp_btn_c_2, scaleUp_btn_c_3, scaleUp_btn_c_4, scaleUp_btn_c_5, scaleUp_btn_c_6, scaleUp_btn_c_7;
     private Animator scaleUp_btn_drum, scaleUp_btn_saxophone, scaleUp_btn_trumpet, scaleUp_btn_guitar, scaleUp_btn_violin, scaleUp_btn_piano;
+    private Animator scaleUp_btn_drum_reverse, scaleUp_btn_saxophone_reverse, scaleUp_btn_trumpet_reverse, scaleUp_btn_guitar_reverse,
+            scaleUp_btn_violin_reverse, scaleUp_btn_piano_reverse;
 
     private ConstraintLayout main_layout, include_layout;
 
@@ -101,6 +108,17 @@ public class MainActivity extends AppCompatActivity {
         btn_violin = findViewById(R.id.btn_violin);
         btn_piano = findViewById(R.id.btn_piano);
 
+        btn_nr_zero = findViewById(R.id.btn_nr_zero);
+        btn_nr_one = findViewById(R.id.btn_nr_one);
+        btn_nr_two = findViewById(R.id.btn_nr_two);
+        btn_nr_three = findViewById(R.id.btn_nr_three);
+        btn_nr_four = findViewById(R.id.btn_nr_four);
+        btn_nr_five = findViewById(R.id.btn_nr_five);
+        btn_nr_six = findViewById(R.id.btn_nr_six);
+        btn_nr_seven = findViewById(R.id.btn_nr_seven);
+        btn_nr_eight = findViewById(R.id.btn_nr_eight);
+        btn_nr_nine = findViewById(R.id.btn_nr_nine);
+
         txt_title = findViewById(R.id.txt_title);
 
         include_layout = findViewById(R.id.include_layout);
@@ -145,6 +163,60 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SetAnimators();
+
+        // Special guest | Animation for btn_drum
+        scaleDown_btn_drum_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
+
+        scaleUp_btn_drum_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
+        scaleUp_btn_drum_reverse.setTarget(btn_drum);
+
+        setDownAndUp_btn_drum_reverse = new AnimatorSet();
+        setDownAndUp_btn_drum_reverse.playSequentially(scaleDown_btn_drum_reverse, scaleUp_btn_drum_reverse);
+
+        // Special guest | Animation for btn_saxophone
+        scaleDown_btn_saxophone_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
+
+        scaleUp_btn_saxophone_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
+        scaleUp_btn_saxophone_reverse.setTarget(btn_saxophone);
+
+        setDownAndUp_btn_saxophone_reverse = new AnimatorSet();
+        setDownAndUp_btn_saxophone_reverse.playSequentially(scaleDown_btn_saxophone_reverse, scaleUp_btn_saxophone_reverse);
+
+        // Special guest | Animation for btn_trumpet
+        scaleDown_btn_trumpet_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
+
+        scaleUp_btn_trumpet_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
+        scaleUp_btn_trumpet_reverse.setTarget(btn_trumpet);
+
+        setDownAndUp_btn_trumpet_reverse = new AnimatorSet();
+        setDownAndUp_btn_trumpet_reverse.playSequentially(scaleDown_btn_trumpet_reverse, scaleUp_btn_trumpet_reverse);
+
+        // Special guest | Animation for btn_guitar
+        scaleDown_btn_guitar_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
+
+        scaleUp_btn_guitar_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
+        scaleUp_btn_guitar_reverse.setTarget(btn_guitar);
+
+        setDownAndUp_btn_guitar_reverse = new AnimatorSet();
+        setDownAndUp_btn_guitar_reverse.playSequentially(scaleDown_btn_guitar_reverse, scaleUp_btn_guitar_reverse);
+
+        // Special guest | Animation for btn_violin
+        scaleDown_btn_violin_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
+
+        scaleUp_btn_violin_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
+        scaleUp_btn_violin_reverse.setTarget(btn_violin);
+
+        setDownAndUp_btn_violin_reverse = new AnimatorSet();
+        setDownAndUp_btn_violin_reverse.playSequentially(scaleDown_btn_violin_reverse, scaleUp_btn_violin_reverse);
+
+        // Special guest | Animation for btn_piano
+        scaleDown_btn_piano_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
+
+        scaleUp_btn_piano_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
+        scaleUp_btn_piano_reverse.setTarget(btn_piano);
+
+        setDownAndUp_btn_piano_reverse = new AnimatorSet();
+        setDownAndUp_btn_piano_reverse.playSequentially(scaleDown_btn_piano_reverse, scaleUp_btn_piano_reverse);
 
     }
 
@@ -966,6 +1038,79 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 400);
 
+        btn_nr_zero.setEnabled(false);
+        btn_nr_one.setEnabled(false);
+        btn_nr_two.setEnabled(false);
+        btn_nr_three.setEnabled(false);
+        btn_nr_four.setEnabled(false);
+        btn_nr_five.setEnabled(false);
+        btn_nr_six.setEnabled(false);
+        btn_nr_seven.setEnabled(false);
+        btn_nr_eight.setEnabled(false);
+        btn_nr_nine.setEnabled(false);
+        btn_a_1.setEnabled(false);
+        btn_a_2.setEnabled(false);
+        btn_a_3.setEnabled(false);
+        btn_a_4.setEnabled(false);
+        btn_a_5.setEnabled(false);
+        btn_a_6.setEnabled(false);
+        btn_a_7.setEnabled(false);
+        btn_b_1.setEnabled(false);
+        btn_b_2.setEnabled(false);
+        btn_b_3.setEnabled(false);
+        btn_b_4.setEnabled(false);
+        btn_b_5.setEnabled(false);
+        btn_b_6.setEnabled(false);
+        btn_b_7.setEnabled(false);
+        btn_c_1.setEnabled(false);
+        btn_c_2.setEnabled(false);
+        btn_c_3.setEnabled(false);
+        btn_c_4.setEnabled(false);
+        btn_c_5.setEnabled(false);
+        btn_c_6.setEnabled(false);
+        btn_c_7.setEnabled(false);
+        btn_musical_notes.setEnabled(false);
+        include_layout.setEnabled(false);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_zero.setEnabled(true);
+                btn_nr_one.setEnabled(true);
+                btn_nr_two.setEnabled(true);
+                btn_nr_three.setEnabled(true);
+                btn_nr_four.setEnabled(true);
+                btn_nr_five.setEnabled(true);
+                btn_nr_six.setEnabled(true);
+                btn_nr_seven.setEnabled(true);
+                btn_nr_eight.setEnabled(true);
+                btn_nr_nine.setEnabled(true);
+                btn_a_1.setEnabled(true);
+                btn_a_2.setEnabled(true);
+                btn_a_3.setEnabled(true);
+                btn_a_4.setEnabled(true);
+                btn_a_5.setEnabled(true);
+                btn_a_6.setEnabled(true);
+                btn_a_7.setEnabled(true);
+                btn_b_1.setEnabled(true);
+                btn_b_2.setEnabled(true);
+                btn_b_3.setEnabled(true);
+                btn_b_4.setEnabled(true);
+                btn_b_5.setEnabled(true);
+                btn_b_6.setEnabled(true);
+                btn_b_7.setEnabled(true);
+                btn_c_1.setEnabled(true);
+                btn_c_2.setEnabled(true);
+                btn_c_3.setEnabled(true);
+                btn_c_4.setEnabled(true);
+                btn_c_5.setEnabled(true);
+                btn_c_6.setEnabled(true);
+                btn_c_7.setEnabled(true);
+                btn_musical_notes.setEnabled(true);
+                include_layout.setEnabled(true);
+            }
+        }, 5500);
+
     }
 
     public void FireExtinguished() {
@@ -1017,25 +1162,153 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ClickOnMusicalNotes(View view) {
-        btn_drum.setVisibility(View.VISIBLE);
-        btn_saxophone.setVisibility(View.VISIBLE);
-        btn_trumpet.setVisibility(View.VISIBLE);
-        btn_guitar.setVisibility(View.VISIBLE);
-        btn_violin.setVisibility(View.VISIBLE);
-        btn_piano.setVisibility(View.VISIBLE);
+
+        btn_musical_notes.setEnabled(false);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_drum.setVisibility(View.INVISIBLE);
-                btn_saxophone.setVisibility(View.INVISIBLE);
-                btn_trumpet.setVisibility(View.INVISIBLE);
-                btn_guitar.setVisibility(View.INVISIBLE);
-                btn_violin.setVisibility(View.INVISIBLE);
-                btn_piano.setVisibility(View.INVISIBLE);
-            }
-        }, 5000);
+                // Special guest | Animation for btn_drum
+                scaleDown_btn_drum = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_down);
+                scaleDown_btn_drum.setTarget(btn_drum);
 
+                scaleUp_btn_drum = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_up);
+
+                setDownAndUp_btn_drum = new AnimatorSet();
+                setDownAndUp_btn_drum.playSequentially(scaleDown_btn_drum, scaleUp_btn_drum);
+                setDownAndUp_btn_drum.start();
+                btn_drum.setVisibility(View.VISIBLE);
+            }
+        }, 200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Special guest | Animation for btn_saxophone
+                scaleDown_btn_saxophone = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_down);
+                scaleDown_btn_saxophone.setTarget(btn_saxophone);
+
+                scaleUp_btn_saxophone = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_up);
+
+                setDownAndUp_btn_saxophone = new AnimatorSet();
+                setDownAndUp_btn_saxophone.playSequentially(scaleDown_btn_saxophone, scaleUp_btn_saxophone);
+                setDownAndUp_btn_saxophone.start();
+                btn_saxophone.setVisibility(View.VISIBLE);
+            }
+        }, 400);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Special guest | Animation for btn_trumpet
+                scaleDown_btn_trumpet = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_down);
+                scaleDown_btn_trumpet.setTarget(btn_trumpet);
+
+                scaleUp_btn_trumpet = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_up);
+
+                setDownAndUp_btn_trumpet = new AnimatorSet();
+                setDownAndUp_btn_trumpet.playSequentially(scaleDown_btn_trumpet, scaleUp_btn_trumpet);
+                setDownAndUp_btn_trumpet.start();
+                btn_trumpet.setVisibility(View.VISIBLE);
+            }
+        }, 600);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Special guest | Animation for btn_guitar
+                scaleDown_btn_guitar = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_down);
+                scaleDown_btn_guitar.setTarget(btn_guitar);
+
+                scaleUp_btn_guitar = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_up);
+
+                setDownAndUp_btn_guitar = new AnimatorSet();
+                setDownAndUp_btn_guitar.playSequentially(scaleDown_btn_guitar, scaleUp_btn_guitar);
+                setDownAndUp_btn_guitar.start();
+                btn_guitar.setVisibility(View.VISIBLE);
+            }
+        }, 800);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Special guest | Animation for btn_violin
+                scaleDown_btn_violin = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_down);
+                scaleDown_btn_violin.setTarget(btn_violin);
+
+                scaleUp_btn_violin = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_up);
+
+                setDownAndUp_btn_violin = new AnimatorSet();
+                setDownAndUp_btn_violin.playSequentially(scaleDown_btn_violin, scaleUp_btn_violin);
+                setDownAndUp_btn_violin.start();
+                btn_violin.setVisibility(View.VISIBLE);
+            }
+        }, 1000);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Special guest | Animation for btn_piano
+                scaleDown_btn_piano = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_down);
+                scaleDown_btn_piano.setTarget(btn_piano);
+
+                scaleUp_btn_piano = AnimatorInflater.loadAnimator(MainActivity.this, R.animator.scale_up);
+
+                setDownAndUp_btn_piano = new AnimatorSet();
+                setDownAndUp_btn_piano.playSequentially(scaleDown_btn_piano, scaleUp_btn_piano);
+                setDownAndUp_btn_piano.start();
+                btn_piano.setVisibility(View.VISIBLE);
+            }
+        }, 1200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setDownAndUp_btn_drum_reverse.start();
+            }
+        }, 3000);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setDownAndUp_btn_saxophone_reverse.start();
+            }
+        }, 3200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setDownAndUp_btn_trumpet_reverse.start();
+            }
+        }, 3400);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setDownAndUp_btn_guitar_reverse.start();
+            }
+        }, 3600);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setDownAndUp_btn_violin_reverse.start();
+            }
+        }, 3800);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setDownAndUp_btn_piano_reverse.start();
+            }
+        }, 4000);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_musical_notes.setEnabled(true);
+            }
+        }, 4200);
 
     }
 
@@ -1333,5 +1606,79 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         sound_error_prone.start();
+
+        btn_nr_zero.setEnabled(false);
+        btn_nr_one.setEnabled(false);
+        btn_nr_two.setEnabled(false);
+        btn_nr_three.setEnabled(false);
+        btn_nr_four.setEnabled(false);
+        btn_nr_five.setEnabled(false);
+        btn_nr_six.setEnabled(false);
+        btn_nr_seven.setEnabled(false);
+        btn_nr_eight.setEnabled(false);
+        btn_nr_nine.setEnabled(false);
+        btn_a_1.setEnabled(false);
+        btn_a_2.setEnabled(false);
+        btn_a_3.setEnabled(false);
+        btn_a_4.setEnabled(false);
+        btn_a_5.setEnabled(false);
+        btn_a_6.setEnabled(false);
+        btn_a_7.setEnabled(false);
+        btn_b_1.setEnabled(false);
+        btn_b_2.setEnabled(false);
+        btn_b_3.setEnabled(false);
+        btn_b_4.setEnabled(false);
+        btn_b_5.setEnabled(false);
+        btn_b_6.setEnabled(false);
+        btn_b_7.setEnabled(false);
+        btn_c_1.setEnabled(false);
+        btn_c_2.setEnabled(false);
+        btn_c_3.setEnabled(false);
+        btn_c_4.setEnabled(false);
+        btn_c_5.setEnabled(false);
+        btn_c_6.setEnabled(false);
+        btn_c_7.setEnabled(false);
+        btn_extinguisher.setEnabled(false);
+        btn_musical_notes.setEnabled(false);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_zero.setEnabled(true);
+                btn_nr_one.setEnabled(true);
+                btn_nr_two.setEnabled(true);
+                btn_nr_three.setEnabled(true);
+                btn_nr_four.setEnabled(true);
+                btn_nr_five.setEnabled(true);
+                btn_nr_six.setEnabled(true);
+                btn_nr_seven.setEnabled(true);
+                btn_nr_eight.setEnabled(true);
+                btn_nr_nine.setEnabled(true);
+                btn_a_1.setEnabled(true);
+                btn_a_2.setEnabled(true);
+                btn_a_3.setEnabled(true);
+                btn_a_4.setEnabled(true);
+                btn_a_5.setEnabled(true);
+                btn_a_6.setEnabled(true);
+                btn_a_7.setEnabled(true);
+                btn_b_1.setEnabled(true);
+                btn_b_2.setEnabled(true);
+                btn_b_3.setEnabled(true);
+                btn_b_4.setEnabled(true);
+                btn_b_5.setEnabled(true);
+                btn_b_6.setEnabled(true);
+                btn_b_7.setEnabled(true);
+                btn_c_1.setEnabled(true);
+                btn_c_2.setEnabled(true);
+                btn_c_3.setEnabled(true);
+                btn_c_4.setEnabled(true);
+                btn_c_5.setEnabled(true);
+                btn_c_6.setEnabled(true);
+                btn_c_7.setEnabled(true);
+                btn_extinguisher.setEnabled(true);
+                btn_musical_notes.setEnabled(true);
+            }
+        }, 4500);
+
     }
 }
