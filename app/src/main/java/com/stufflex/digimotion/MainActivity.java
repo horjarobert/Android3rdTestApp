@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer sound_extinguisher, sound_error_prone,
             sound_btn_a_1, sound_btn_a_2, sound_btn_a_3, sound_btn_a_4, sound_btn_a_5, sound_btn_a_6, sound_btn_a_7,
             sound_btn_b_1, sound_btn_b_2, sound_btn_b_3, sound_btn_b_4, sound_btn_b_5, sound_btn_b_6, sound_btn_b_7,
-            sound_btn_c_1, sound_btn_c_2, sound_btn_c_3, sound_btn_c_4, sound_btn_c_5, sound_btn_c_6, sound_btn_c_7;
+            sound_btn_c_1, sound_btn_c_2, sound_btn_c_3, sound_btn_c_4, sound_btn_c_5, sound_btn_c_6, sound_btn_c_7,
+            sound_btn_zero, sound_btn_one, sound_btn_two, sound_btn_three, sound_btn_four, sound_btn_five, sound_btn_six, sound_btn_seven, sound_btn_eight, sound_btn_nine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +124,254 @@ public class MainActivity extends AppCompatActivity {
 
         include_layout = findViewById(R.id.include_layout);
         main_layout = findViewById(R.id.main_layout);
+
+        // Clicking numbers
+        btn_nr_zero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SetAnimators();
+
+                btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background);
+
+                btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_b_2.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_b_3.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_b_4.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_b_5.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_b_6.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_b_7.setBackgroundResource(R.drawable.txt_buttons_background);
+
+                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background);
+                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background);
+
+                btn_nr_zero.setEnabled(false);
+                btn_nr_one.setEnabled(false);
+                btn_nr_two.setEnabled(false);
+                btn_nr_three.setEnabled(false);
+                btn_nr_four.setEnabled(false);
+                btn_nr_five.setEnabled(false);
+                btn_nr_six.setEnabled(false);
+                btn_nr_seven.setEnabled(false);
+                btn_nr_eight.setEnabled(false);
+                btn_nr_nine.setEnabled(false);
+
+                btn_extinguisher.setEnabled(false);
+                btn_musical_notes.setEnabled(false);
+                include_layout.setEnabled(false);
+
+                btn_a_1.setEnabled(false);
+                btn_a_2.setEnabled(false);
+                btn_a_3.setEnabled(false);
+                btn_a_4.setEnabled(false);
+                btn_a_5.setEnabled(false);
+                btn_a_6.setEnabled(false);
+                btn_a_7.setEnabled(false);
+
+                btn_b_1.setEnabled(false);
+                btn_b_2.setEnabled(false);
+                btn_b_3.setEnabled(false);
+                btn_b_4.setEnabled(false);
+                btn_b_5.setEnabled(false);
+                btn_b_6.setEnabled(false);
+                btn_b_7.setEnabled(false);
+
+                btn_c_1.setEnabled(false);
+                btn_c_2.setEnabled(false);
+                btn_c_3.setEnabled(false);
+                btn_c_4.setEnabled(false);
+                btn_c_5.setEnabled(false);
+                btn_c_6.setEnabled(false);
+                btn_c_7.setEnabled(false);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_7.start();
+                    }
+                }, 200);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_6.start();
+                    }
+                }, 350);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_5.start();
+                    }
+                }, 500);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_4.start();
+                    }
+                }, 650);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_3.start();
+                    }
+                }, 800);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_2.start();
+                    }
+                }, 950);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_a_1.start();
+                    }
+                }, 1100);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_b_1.start();
+
+                        btn_b_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_b_7.start();
+                    }
+                }, 1250);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_7.start();
+                    }
+                }, 1700);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_6.start();
+                    }
+                }, 1850);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_5.start();
+                    }
+                }, 2000);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_4.start();
+                    }
+                }, 2150);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_3.start();
+                    }
+                }, 2300);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_2.start();
+                    }
+                }, 2450);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                        setDownAndUp_btn_c_1.start();
+                    }
+                }, 2550);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn_nr_zero.setEnabled(true);
+                        btn_nr_one.setEnabled(true);
+                        btn_nr_two.setEnabled(true);
+                        btn_nr_three.setEnabled(true);
+                        btn_nr_four.setEnabled(true);
+                        btn_nr_five.setEnabled(true);
+                        btn_nr_six.setEnabled(true);
+                        btn_nr_seven.setEnabled(true);
+                        btn_nr_eight.setEnabled(true);
+                        btn_nr_nine.setEnabled(true);
+
+                        btn_extinguisher.setEnabled(true);
+                        btn_musical_notes.setEnabled(true);
+                        include_layout.setEnabled(true);
+
+                        btn_a_1.setEnabled(true);
+                        btn_a_2.setEnabled(true);
+                        btn_a_3.setEnabled(true);
+                        btn_a_4.setEnabled(true);
+                        btn_a_5.setEnabled(true);
+                        btn_a_6.setEnabled(true);
+                        btn_a_7.setEnabled(true);
+
+                        btn_b_1.setEnabled(true);
+                        btn_b_2.setEnabled(true);
+                        btn_b_3.setEnabled(true);
+                        btn_b_4.setEnabled(true);
+                        btn_b_5.setEnabled(true);
+                        btn_b_6.setEnabled(true);
+                        btn_b_7.setEnabled(true);
+
+                        btn_c_1.setEnabled(true);
+                        btn_c_2.setEnabled(true);
+                        btn_c_3.setEnabled(true);
+                        btn_c_4.setEnabled(true);
+                        btn_c_5.setEnabled(true);
+                        btn_c_6.setEnabled(true);
+                        btn_c_7.setEnabled(true);
+                    }
+                }, 2700);
+
+                sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+                sound_btn_zero.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                    }
+                });
+                sound_btn_zero.start();
+
+            }
+        });
 
         // Set to invisible
         btn_sound_off.setVisibility(View.INVISIBLE);
@@ -435,61 +684,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Click on btn_zero
     public void ClickOnZero(View view) {
-        SetAnimators();
 
-        btn_b_2.setBackgroundResource(R.drawable.txt_buttons_background);
-        btn_b_3.setBackgroundResource(R.drawable.txt_buttons_background);
-        btn_b_4.setBackgroundResource(R.drawable.txt_buttons_background);
-        btn_b_5.setBackgroundResource(R.drawable.txt_buttons_background);
-        btn_b_6.setBackgroundResource(R.drawable.txt_buttons_background);
-
-        btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_1.start();
-
-        btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_b_1.start();
-
-        btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_1.start();
-
-        btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_2.start();
-
-        btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_2.start();
-
-        btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_3.start();
-
-        btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_3.start();
-
-        btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_4.start();
-
-        btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_4.start();
-
-        btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_5.start();
-
-        btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_5.start();
-
-        btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_6.start();
-
-        btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_6.start();
-
-        btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_a_7.start();
-
-        btn_b_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_b_7.start();
-
-        btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
-        setDownAndUp_btn_c_7.start();
 
     }
 
@@ -531,6 +726,15 @@ public class MainActivity extends AppCompatActivity {
 
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_c_7.start();
+
+        sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+        sound_btn_one.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_one.start();
 
     }
 
@@ -582,6 +786,15 @@ public class MainActivity extends AppCompatActivity {
 
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_c_7.start();
+
+        sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+        sound_btn_two.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_two.start();
 
     }
 
@@ -636,6 +849,15 @@ public class MainActivity extends AppCompatActivity {
         btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_a_7.start();
 
+        sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+        sound_btn_three.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_three.start();
+
     }
 
     public void ClickOnFour(View view) {
@@ -686,6 +908,15 @@ public class MainActivity extends AppCompatActivity {
 
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_c_7.start();
+
+        sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+        sound_btn_four.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_four.start();
 
     }
 
@@ -739,6 +970,15 @@ public class MainActivity extends AppCompatActivity {
 
         btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_a_7.start();
+
+        sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+        sound_btn_five.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_five.start();
 
     }
 
@@ -797,6 +1037,15 @@ public class MainActivity extends AppCompatActivity {
         btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_a_7.start();
 
+        sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+        sound_btn_six.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_six.start();
+
     }
 
     public void ClickOnSeven(View view) {
@@ -841,6 +1090,15 @@ public class MainActivity extends AppCompatActivity {
 
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_c_7.start();
+
+        sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+        sound_btn_seven.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_seven.start();
 
     }
 
@@ -903,6 +1161,15 @@ public class MainActivity extends AppCompatActivity {
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_c_7.start();
 
+        sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+        sound_btn_eight.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_eight.start();
+
     }
 
     public void ClickOnNine(View view) {
@@ -959,6 +1226,15 @@ public class MainActivity extends AppCompatActivity {
 
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
         setDownAndUp_btn_c_7.start();
+
+        sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+        sound_btn_nine.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        sound_btn_nine.start();
 
     }
 
@@ -1071,6 +1347,7 @@ public class MainActivity extends AppCompatActivity {
         btn_c_7.setEnabled(false);
         btn_musical_notes.setEnabled(false);
         include_layout.setEnabled(false);
+        btn_extinguisher.setEnabled(false);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1108,8 +1385,9 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_7.setEnabled(true);
                 btn_musical_notes.setEnabled(true);
                 include_layout.setEnabled(true);
+                btn_extinguisher.setEnabled(true);
             }
-        }, 5500);
+        }, 4000);
 
     }
 
@@ -1308,7 +1586,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 btn_musical_notes.setEnabled(true);
             }
-        }, 4200);
+        }, 4800);
 
     }
 
@@ -1640,6 +1918,7 @@ public class MainActivity extends AppCompatActivity {
         btn_c_7.setEnabled(false);
         btn_extinguisher.setEnabled(false);
         btn_musical_notes.setEnabled(false);
+        include_layout.setEnabled(false);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1677,8 +1956,10 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_7.setEnabled(true);
                 btn_extinguisher.setEnabled(true);
                 btn_musical_notes.setEnabled(true);
+                include_layout.setEnabled(true);
+
             }
-        }, 4500);
+        }, 2500);
 
     }
 }
