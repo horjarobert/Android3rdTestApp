@@ -184,6 +184,7 @@
         android:text="@string/str_zero"
         android:textSize="20sp"
         android:translationZ="2dp"
+        android:onClick="ClickOnZero"
         app:layout_constraintBottom_toTopOf="@+id/guideline_ht_95"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vt_1"
         app:layout_constraintStart_toStartOf="@+id/guideline_vt_1"
