@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_1, sound_btn_c_2, sound_btn_c_3, sound_btn_c_4, sound_btn_c_5, sound_btn_c_6, sound_btn_c_7,
             sound_btn_zero, sound_btn_one, sound_btn_two, sound_btn_three, sound_btn_four, sound_btn_five, sound_btn_six, sound_btn_seven, sound_btn_eight, sound_btn_nine;
 
+    private int int_piano = 1, int_drum = 0, int_saxophone = 0, int_trumpet = 0, int_guitar = 0, int_violin = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -571,7 +573,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2600);
 
-        sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+        if (int_piano == 1) {
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+
+        } else if (int_drum == 1) {
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+
+        } else if (int_guitar == 1) {
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+
+        } else if (int_violin == 1) {
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+
+        }
+
         sound_btn_zero.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -651,7 +672,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 1200);
 
-        sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+        if (int_piano == 1) {
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+
+        } else if (int_drum == 1) {
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+
+        } else if (int_guitar == 1) {
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+
+        } else if (int_violin == 1) {
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+
+        }
+
         sound_btn_one.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -768,7 +808,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2700);
 
-        sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+        if (int_piano == 1) {
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+
+        } else if (int_drum == 1) {
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+
+        } else if (int_guitar == 1) {
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+
+        } else if (int_violin == 1) {
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+
+        }
+
         sound_btn_two.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -876,7 +935,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2100);
 
-        sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+        if (int_piano == 1) {
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+
+        } else if (int_drum == 1) {
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+
+        } else if (int_guitar == 1) {
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+
+        } else if (int_violin == 1) {
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+
+        }
+
         sound_btn_three.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -936,24 +1014,24 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_7.start();
+                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_1.start();
             }
         }, 1300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_6.start();
+                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_2.start();
             }
         }, 1400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_5.start();
+                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_3.start();
             }
         }, 1500);
 
@@ -968,24 +1046,24 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_3.start();
+                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_5.start();
             }
         }, 1700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_2.start();
+                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_6.start();
             }
         }, 1800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_1.start();
+                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_7.start();
             }
         }, 1900);
 
@@ -996,7 +1074,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2300);
 
-        sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+        if (int_piano == 1) {
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+
+        } else if (int_drum == 1) {
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+
+        } else if (int_guitar == 1) {
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+
+        } else if (int_violin == 1) {
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+
+        }
+
         sound_btn_four.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1114,7 +1211,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2700);
 
-        sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+        if (int_piano == 1) {
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+
+        } else if (int_drum == 1) {
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+
+        } else if (int_guitar == 1) {
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+
+        } else if (int_violin == 1) {
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+
+        }
+
         sound_btn_five.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1248,7 +1364,26 @@ public class MainActivity extends AppCompatActivity {
            }
        }, 2500);
 
-        sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+        if (int_piano == 1) {
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+
+        } else if (int_drum == 1) {
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+
+        } else if (int_guitar == 1) {
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+
+        } else if (int_violin == 1) {
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+
+        }
+
         sound_btn_six.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1285,24 +1420,24 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_7.start();
+                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_1.start();
             }
         }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_6.start();
+                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_2.start();
             }
         }, 1100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_5.start();
+                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_3.start();
             }
         }, 1200);
 
@@ -1317,24 +1452,24 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_3.start();
+                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_5.start();
             }
         }, 1400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_2.start();
+                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_6.start();
             }
         }, 1500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_1.start();
+                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_7.start();
             }
         }, 1600);
 
@@ -1345,7 +1480,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
 
-        sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+        if (int_piano == 1) {
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+
+        } else if (int_drum == 1) {
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+
+        } else if (int_guitar == 1) {
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+
+        } else if (int_violin == 1) {
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+
+        }
+
         sound_btn_seven.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1435,24 +1589,24 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_7.start();
+                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_1.start();
             }
         }, 1600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_6.start();
+                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_2.start();
             }
         }, 1700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_5.start();
+                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_3.start();
             }
         }, 1800);
 
@@ -1467,24 +1621,24 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_3.start();
+                btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_5.start();
             }
         }, 2000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_2.start();
+                btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_6.start();
             }
         }, 2100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_c_1.start();
+                btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_c_7.start();
             }
         }, 2200);
 
@@ -1495,7 +1649,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2600);
 
-        sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+        if (int_piano == 1) {
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+
+        } else if (int_drum == 1) {
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+
+        } else if (int_guitar == 1) {
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+
+        } else if (int_violin == 1) {
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+
+        }
+
         sound_btn_eight.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1523,18 +1696,10 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_a_4.start();
+                btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_a_1.start();
             }
         }, 600);
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_a_3.start();
-            }
-        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1542,13 +1707,21 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_2.start();
             }
+        }, 700);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_a_3.start();
+            }
         }, 800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
-                setDownAndUp_btn_a_1.start();
+                btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
+                setDownAndUp_btn_a_4.start();
             }
         }, 900);
 
@@ -1629,7 +1802,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2700);
 
-        sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+        if (int_piano == 1) {
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+
+        } else if (int_drum == 1) {
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+
+        } else if (int_guitar == 1) {
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+
+        } else if (int_violin == 1) {
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+
+        }
+
         sound_btn_nine.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1961,7 +2153,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_a_1(View view) {
 
-        sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+        if (int_piano == 1) {
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1969,11 +2180,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         sound_btn_a_1.start();
+
     }
 
     public void Btn_a_2(View view) {
 
-        sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1);
+        if (int_piano == 1) {
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1985,7 +2216,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_a_3(View view) {
 
-        sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1);
+        if (int_piano == 1) {
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -1997,7 +2247,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_a_4(View view) {
 
-        sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1);
+        if (int_piano == 1) {
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2009,7 +2278,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_a_5(View view) {
 
-        sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1);
+        if (int_piano == 1) {
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2021,7 +2309,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_a_6(View view) {
 
-        sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1);
+        if (int_piano == 1) {
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2033,7 +2340,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_a_7(View view) {
 
-        sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1);
+        if (int_piano == 1) {
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1);
+
+        } else if (int_drum == 1) {
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_a_7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2045,7 +2371,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_1(View view) {
 
-        sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2);
+        if (int_piano == 1) {
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2057,7 +2402,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_2(View view) {
 
-        sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2);
+        if (int_piano == 1) {
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2069,7 +2433,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_3(View view) {
 
-        sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2);
+        if (int_piano == 1) {
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2081,7 +2464,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_4(View view) {
 
-        sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2);
+        if (int_piano == 1) {
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2093,7 +2495,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_5(View view) {
 
-        sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2);
+        if (int_piano == 1) {
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2105,7 +2526,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_6(View view) {
 
-        sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2);
+        if (int_piano == 1) {
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2117,7 +2557,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_b_7(View view) {
 
-        sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2);
+        if (int_piano == 1) {
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2);
+
+        } else if (int_drum == 1) {
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_b_7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2129,7 +2588,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_1(View view) {
 
-        sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3);
+        if (int_piano == 1) {
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2141,7 +2619,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_2(View view) {
 
-        sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3);
+        if (int_piano == 1) {
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2153,7 +2650,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_3(View view) {
 
-        sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3);
+        if (int_piano == 1) {
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2165,7 +2681,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_4(View view) {
 
-        sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3);
+        if (int_piano == 1) {
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2177,7 +2712,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_5(View view) {
 
-        sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3);
+        if (int_piano == 1) {
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_5.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2189,7 +2743,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_6(View view) {
 
-        sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3);
+        if (int_piano == 1) {
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_6.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2201,7 +2774,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void Btn_c_7(View view) {
 
-        sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3);
+        if (int_piano == 1) {
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3);
+
+        } else if (int_drum == 1) {
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_saxophone == 1) {
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3_saxophone);
+
+        } else if (int_trumpet == 1) {
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_guitar == 1) {
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        } else if (int_violin == 1) {
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+
+        }
+
         sound_btn_c_7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -2341,5 +2933,145 @@ public class MainActivity extends AppCompatActivity {
         btn_c_5.setEnabled(true);
         btn_c_6.setEnabled(true);
         btn_c_7.setEnabled(true);
+    }
+
+    public void ClickOnPiano(View view) {
+        int_piano = 1;
+
+        if (int_piano == 1) {
+            int_drum = 0;
+            int_saxophone = 0;
+            int_trumpet = 0;
+            int_guitar = 0;
+            int_violin = 0;
+        }
+
+        Toast toast = Toast.makeText(this, "Playing a piano", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+
+    }
+
+    public void ClickOnDrum(View view) {
+        int_drum = 1;
+
+        if (int_drum == 1) {
+            int_piano = 0;
+            int_saxophone = 0;
+            int_trumpet = 0;
+            int_guitar = 0;
+            int_violin = 0;
+        }
+
+        Toast toast = Toast.makeText(this, "Drumming", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+    }
+
+    public void ClickOnSaxophone(View view) {
+        int_saxophone = 1;
+
+        if (int_saxophone == 1) {
+            int_piano = 0;
+            int_drum = 0;
+            int_trumpet = 0;
+            int_guitar = 0;
+            int_violin = 0;
+        }
+
+        Toast toast = Toast.makeText(this, "Playing a saxophone", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+    }
+
+    public void ClickOnTrumpet(View view) {
+        int_trumpet = 1;
+
+        if (int_trumpet == 1) {
+            int_piano = 0;
+            int_drum = 0;
+            int_saxophone = 0;
+            int_guitar = 0;
+            int_violin = 0;
+        }
+
+        Toast toast = Toast.makeText(this, "Playing a trumpet", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+    }
+
+    public void ClickOnGuitar(View view) {
+        int_guitar = 1;
+
+        if (int_guitar == 1) {
+            int_piano = 0;
+            int_drum = 0;
+            int_saxophone = 0;
+            int_trumpet = 0;
+            int_violin = 0;
+        }
+
+        Toast toast = Toast.makeText(this, "Playing a guitar", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+    }
+
+    public void ClickOnViolin(View view) {
+        int_violin = 1;
+
+        if (int_violin == 1) {
+            int_piano = 0;
+            int_drum = 0;
+            int_saxophone = 0;
+            int_trumpet = 0;
+            int_guitar = 0;
+        }
+
+        Toast toast = Toast.makeText(this, "Playing a violin", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+
     }
 }
