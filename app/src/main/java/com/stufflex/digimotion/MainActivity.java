@@ -1837,70 +1837,7 @@ public class MainActivity extends AppCompatActivity {
         SetAnimators();
         FireExtinguished();
 
-        include_layout.setBackgroundResource(R.drawable.background_white);
-
-        btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_1.start();
-
-        btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_2.start();
-
-        btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_3.start();
-
-        btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_4.start();
-
-        btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_5.start();
-
-        btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_6.start();
-
-        btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_a_7.start();
-
-        btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_1.start();
-
-        btn_b_2.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_2.start();
-
-        btn_b_3.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_3.start();
-
-        btn_b_4.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_4.start();
-
-        btn_b_5.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_5.start();
-
-        btn_b_6.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_6.start();
-
-        btn_b_7.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_b_7.start();
-
-        btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_c_1.start();
-
-        btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_c_2.start();
-
-        btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_c_3.start();
-
-        btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_c_4.start();
-
-        btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_c_5.start();
-
-        btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background);
-        setDownAndUp_btn_c_6.start();
-
-        setDownAndUp_btn_c_7.start();
-        btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background);
+        Cleaning();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -2170,7 +2107,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1_violin);
 
         }
 
@@ -2202,7 +2139,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1_violin);
 
         }
 
@@ -2233,7 +2170,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1_violin);
 
         }
 
@@ -2264,7 +2201,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1_violin);
 
         }
 
@@ -2295,7 +2232,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1_violin);
 
         }
 
@@ -2326,7 +2263,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1_violin);
 
         }
 
@@ -2357,7 +2294,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1_violin);
 
         }
 
@@ -2388,7 +2325,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2_violin);
 
         }
 
@@ -2419,7 +2356,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2_violin);
 
         }
 
@@ -2450,7 +2387,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2_violin);
 
         }
 
@@ -2481,7 +2418,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2_violin);
 
         }
 
@@ -2512,7 +2449,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2_violin);
 
         }
 
@@ -2543,7 +2480,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2_violin);
 
         }
 
@@ -2574,7 +2511,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2_violin);
 
         }
 
@@ -2605,7 +2542,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3_violin);
 
         }
 
@@ -2636,7 +2573,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3_violin);
 
         }
 
@@ -2667,7 +2604,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3_violin);
 
         }
 
@@ -2698,7 +2635,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3_violin);
 
         }
 
@@ -2729,7 +2666,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3_violin);
 
         }
 
@@ -2760,7 +2697,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3_violin);
 
         }
 
@@ -2791,7 +2728,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
 
         } else if (int_violin == 1) {
-            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3_violin);
 
         }
 
@@ -2958,6 +2895,14 @@ public class MainActivity extends AppCompatActivity {
             lastToastTime = now;
         }
 
+        Cleaning();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                include_layout.setBackgroundResource(R.drawable.background_black);
+            }
+        }, 400);
     }
 
     public void ClickOnDrum(View view) {
@@ -2981,6 +2926,15 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             lastToastTime = now;
         }
+
+        Cleaning();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                include_layout.setBackgroundResource(R.drawable.background_black);
+            }
+        }, 400);
     }
 
     public void ClickOnSaxophone(View view) {
@@ -3004,6 +2958,15 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             lastToastTime = now;
         }
+
+        Cleaning();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                include_layout.setBackgroundResource(R.drawable.background_black);
+            }
+        }, 400);
     }
 
     public void ClickOnTrumpet(View view) {
@@ -3027,6 +2990,15 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             lastToastTime = now;
         }
+
+        Cleaning();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                include_layout.setBackgroundResource(R.drawable.background_black);
+            }
+        }, 400);
     }
 
     public void ClickOnGuitar(View view) {
@@ -3050,6 +3022,15 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             lastToastTime = now;
         }
+
+        Cleaning();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                include_layout.setBackgroundResource(R.drawable.background_black);
+            }
+        }, 400);
     }
 
     public void ClickOnViolin(View view) {
@@ -3074,5 +3055,80 @@ public class MainActivity extends AppCompatActivity {
             lastToastTime = now;
         }
 
+        Cleaning();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                include_layout.setBackgroundResource(R.drawable.background_black);
+            }
+        }, 400);
+    }
+
+    public void Cleaning() {
+        include_layout.setBackgroundResource(R.drawable.background_white);
+
+        btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_1.start();
+
+        btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_2.start();
+
+        btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_3.start();
+
+        btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_4.start();
+
+        btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_5.start();
+
+        btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_6.start();
+
+        btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_a_7.start();
+
+        btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_1.start();
+
+        btn_b_2.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_2.start();
+
+        btn_b_3.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_3.start();
+
+        btn_b_4.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_4.start();
+
+        btn_b_5.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_5.start();
+
+        btn_b_6.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_6.start();
+
+        btn_b_7.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_b_7.start();
+
+        btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_c_1.start();
+
+        btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_c_2.start();
+
+        btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_c_3.start();
+
+        btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_c_4.start();
+
+        btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_c_5.start();
+
+        btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background);
+        setDownAndUp_btn_c_6.start();
+
+        setDownAndUp_btn_c_7.start();
+        btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background);
     }
 }
