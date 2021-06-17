@@ -15,6 +15,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -449,7 +450,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_7.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -457,7 +458,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_6.start();
             }
-        }, 300);
+        }, 200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -465,7 +466,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_5.start();
             }
-        }, 400);
+        }, 300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -473,7 +474,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_4.start();
             }
-        }, 500);
+        }, 400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -481,7 +482,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_3.start();
             }
-        }, 600);
+        }, 500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -489,7 +490,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_2.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -497,7 +498,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 800);
+        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -508,7 +509,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_b_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_b_7.start();
             }
-        }, 1100);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -615,7 +616,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_7.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -623,7 +624,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_6.start();
             }
-        }, 300);
+        }, 200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -631,7 +632,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_5.start();
             }
-        }, 400);
+        }, 300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -639,7 +640,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_4.start();
             }
-        }, 500);
+        }, 400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -647,7 +648,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_3.start();
             }
-        }, 600);
+        }, 500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -655,7 +656,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_2.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -663,14 +664,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_1.start();
             }
-        }, 800);
+        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SetEnableTrue();
             }
-        }, 1200);
+        }, 1100);
 
         if (int_piano == 1) {
             sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
@@ -713,7 +714,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_7.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -721,7 +722,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_6.start();
             }
-        }, 300);
+        }, 200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -729,7 +730,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_5.start();
             }
-        }, 400);
+        }, 300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -737,7 +738,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_4.start();
             }
-        }, 500);
+        }, 400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -745,7 +746,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -759,7 +760,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_b_1.start();
             }
-        }, 1100);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -856,7 +857,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -870,7 +871,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_b_1.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -878,7 +879,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_7.start();
             }
-        }, 1100);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -886,7 +887,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_6.start();
             }
-        }, 1200);
+        }, 1100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -894,7 +895,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_5.start();
             }
-        }, 1300);
+        }, 1200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -902,7 +903,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_4.start();
             }
-        }, 1400);
+        }, 1300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -910,7 +911,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_3.start();
             }
-        }, 1500);
+        }, 1400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -918,7 +919,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_2.start();
             }
-        }, 1600);
+        }, 1500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -926,14 +927,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_1.start();
             }
-        }, 1700);
+        }, 1600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SetEnableTrue();
             }
-        }, 2100);
+        }, 2000);
 
         if (int_piano == 1) {
             sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
@@ -977,7 +978,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_4.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -985,7 +986,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_3.start();
             }
-        }, 300);
+        }, 200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -993,7 +994,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_2.start();
             }
-        }, 400);
+        }, 300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1001,7 +1002,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 500);
+        }, 400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1116,7 +1117,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_7.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1124,7 +1125,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_4.start();
             }
-        }, 600);
+        }, 500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1132,7 +1133,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_3.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1140,7 +1141,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_2.start();
             }
-        }, 800);
+        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1148,7 +1149,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 900);
+        }, 800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1253,7 +1254,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_7.start();
            }
-       }, 200);
+       }, 100);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1261,7 +1262,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_6.start();
            }
-       }, 300);
+       }, 200);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1269,7 +1270,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_5.start();
            }
-       }, 400);
+       }, 300);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1277,7 +1278,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_4.start();
            }
-       }, 500);
+       }, 400);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1285,7 +1286,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_3.start();
            }
-       }, 600);
+       }, 500);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1293,7 +1294,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_2.start();
            }
-       }, 700);
+       }, 600);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1301,7 +1302,7 @@ public class MainActivity extends AppCompatActivity {
                btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_a_1.start();
            }
-       }, 800);
+       }, 700);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1315,7 +1316,7 @@ public class MainActivity extends AppCompatActivity {
                btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_b_1.start();
            }
-       }, 1200);
+       }, 1100);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1355,7 +1356,7 @@ public class MainActivity extends AppCompatActivity {
                btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                setDownAndUp_btn_c_1.start();
            }
-       }, 2100);
+       }, 2000);
 
        new Handler().postDelayed(new Runnable() {
            @Override
@@ -1406,7 +1407,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1522,7 +1523,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_7.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1530,7 +1531,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_6.start();
             }
-        }, 300);
+        }, 200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1538,7 +1539,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_5.start();
             }
-        }, 400);
+        }, 300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1546,7 +1547,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_4.start();
             }
-        }, 500);
+        }, 400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1554,7 +1555,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_3.start();
             }
-        }, 600);
+        }, 500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1562,7 +1563,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_2.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1570,7 +1571,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 800);
+        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1584,7 +1585,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_b_1.start();
             }
-        }, 1200);
+        }, 1100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1592,7 +1593,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_1.start();
             }
-        }, 1600);
+        }, 1500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1600,7 +1601,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_2.start();
             }
-        }, 1700);
+        }, 1600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1608,7 +1609,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_3.start();
             }
-        }, 1800);
+        }, 1700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1616,7 +1617,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_4.start();
             }
-        }, 1900);
+        }, 1800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1624,7 +1625,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_5.start();
             }
-        }, 2000);
+        }, 1900);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1632,7 +1633,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_6.start();
             }
-        }, 2100);
+        }, 2000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1640,14 +1641,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_7.start();
             }
-        }, 2200);
+        }, 2100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SetEnableTrue();
             }
-        }, 2600);
+        }, 2500);
 
         if (int_piano == 1) {
             sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
@@ -1691,7 +1692,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_7.start();
             }
-        }, 200);
+        }, 100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1699,7 +1700,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_1.start();
             }
-        }, 600);
+        }, 500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1707,7 +1708,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_2.start();
             }
-        }, 700);
+        }, 600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1715,7 +1716,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_3.start();
             }
-        }, 800);
+        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1723,7 +1724,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_a_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_a_4.start();
             }
-        }, 900);
+        }, 800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1737,7 +1738,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_b_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_b_1.start();
             }
-        }, 1100);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1745,7 +1746,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_7.start();
             }
-        }, 1500);
+        }, 1400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1753,7 +1754,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_6.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_6.start();
             }
-        }, 1600);
+        }, 1500);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1761,7 +1762,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_5.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_5.start();
             }
-        }, 1700);
+        }, 1600);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1769,7 +1770,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_4.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_4.start();
             }
-        }, 1800);
+        }, 1700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1777,7 +1778,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_3.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_3.start();
             }
-        }, 1900);
+        }, 1800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1785,7 +1786,7 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_2.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_2.start();
             }
-        }, 2000);
+        }, 1900);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -1793,14 +1794,14 @@ public class MainActivity extends AppCompatActivity {
                 btn_c_1.setBackgroundResource(R.drawable.txt_buttons_background_green);
                 setDownAndUp_btn_c_1.start();
             }
-        }, 2100);
+        }, 2000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SetEnableTrue();
             }
-        }, 2500);
+        }, 2400);
 
         if (int_piano == 1) {
             sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
