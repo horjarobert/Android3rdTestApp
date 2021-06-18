@@ -3,6 +3,7 @@ package com.stufflex.digimotion;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -10,8 +11,11 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.TransitionManager;
+import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
@@ -30,7 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_sound_on, btn_sound_off, btn_extinguisher, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano,
             btn_nr_zero, btn_nr_one, btn_nr_two, btn_nr_three, btn_nr_four, btn_nr_five, btn_nr_six, btn_nr_seven, btn_nr_eight, btn_nr_nine;
 
-    private TextView txt_title, txt_bar_1, txt_bar_2, txt_bar_3, txt_bar_4, txt_bar_5;
+    private TextView txt_title, txt_bar_1, txt_bar_2, txt_bar_3, txt_bar_4, txt_bar_5,
+            txt_support_line_1, txt_support_line_21, txt_support_line_22, txt_support_line_31, txt_support_line_32, txt_support_line_41,
+            txt_support_line_42, txt_support_line_51, txt_support_line_52, txt_support_line_61, txt_support_line_62, txt_support_line_71,
+            txt_support_line_72, txt_support_line_81, txt_support_line_82, txt_support_line_9;
 
     private AnimatorSet setDownAndUp_btn_a_1, setDownAndUp_btn_a_2, setDownAndUp_btn_a_3, setDownAndUp_btn_a_4, setDownAndUp_btn_a_5, setDownAndUp_btn_a_6, setDownAndUp_btn_a_7,
             setDownAndUp_btn_b_1, setDownAndUp_btn_b_2, setDownAndUp_btn_b_3, setDownAndUp_btn_b_4, setDownAndUp_btn_b_5, setDownAndUp_btn_b_6, setDownAndUp_btn_b_7,
@@ -69,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
     private Animation anim_txt_title, anim_btn_musical_notes, anim_btn_extinguisher,
                 anim_btn_zero, anim_btn_one, anim_btn_two, anim_btn_three, anim_btn_four, anim_btn_five, anim_btn_six, anim_btn_seven,
                 anim_btn_eight, anim_btn_nine;
+
+    private ConstraintSet constraintSet_layout_OLD = new ConstraintSet();
+    private ConstraintSet constraintSet_layout_NEW = new ConstraintSet();
+
+    private Boolean isIncludeLayoutClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +144,23 @@ public class MainActivity extends AppCompatActivity {
         txt_bar_4 = findViewById(R.id.txt_bar_4);
         txt_bar_5 = findViewById(R.id.txt_bar_5);
 
+        txt_support_line_1 = findViewById(R.id.txt_support_line_1);
+        txt_support_line_21= findViewById(R.id.txt_support_line_21);
+        txt_support_line_22= findViewById(R.id.txt_support_line_22);
+        txt_support_line_31= findViewById(R.id.txt_support_line_31);
+        txt_support_line_32= findViewById(R.id.txt_support_line_32);
+        txt_support_line_41= findViewById(R.id.txt_support_line_41);
+        txt_support_line_42= findViewById(R.id.txt_support_line_42);
+        txt_support_line_51= findViewById(R.id.txt_support_line_51);
+        txt_support_line_52= findViewById(R.id.txt_support_line_52);
+        txt_support_line_61= findViewById(R.id.txt_support_line_61);
+        txt_support_line_62= findViewById(R.id.txt_support_line_62);
+        txt_support_line_71= findViewById(R.id.txt_support_line_71);
+        txt_support_line_72= findViewById(R.id.txt_support_line_72);
+        txt_support_line_81= findViewById(R.id.txt_support_line_81);
+        txt_support_line_82= findViewById(R.id.txt_support_line_82);
+        txt_support_line_9= findViewById(R.id.txt_support_line_9);
+
         include_layout = findViewById(R.id.include_layout);
         main_layout = findViewById(R.id.main_layout);
 
@@ -155,14 +184,10 @@ public class MainActivity extends AppCompatActivity {
         btn_nr_eight.setVisibility(View.INVISIBLE);
         btn_nr_nine.setVisibility(View.INVISIBLE);
 
-        // Click on main_layout for hiding navbar
-//        main_layout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                // Navbar-fullscreen
-//                hideNavigationBar();
-//            }
-//        });
+        // Clones
+        constraintSet_layout_OLD.clone(main_layout);
+        constraintSet_layout_NEW.clone(this, R.layout.clone_just_tabulature);
+
 
         // Sound buttons
         btn_sound_on.setOnClickListener(new View.OnClickListener() {
@@ -244,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
         anim_txt_title = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
         anim_btn_musical_notes = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
         anim_btn_extinguisher = AnimationUtils.loadAnimation(this, R.anim.right_to_left);
-        anim_btn_zero = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
+        anim_btn_zero = AnimationUtils.loadAnimation(this, R.anim.bounce_left_to_right);
         anim_btn_one = AnimationUtils.loadAnimation(this, R.anim.bounce_left_to_right);
         anim_btn_two = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_3);
         anim_btn_three = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_2);
@@ -252,12 +277,12 @@ public class MainActivity extends AppCompatActivity {
         anim_btn_five = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_2);
         anim_btn_six = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_3);
         anim_btn_seven = AnimationUtils.loadAnimation(this, R.anim.bounce_right_to_left);
-        anim_btn_eight = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
+        anim_btn_eight = AnimationUtils.loadAnimation(this, R.anim.bounce_right_to_left);
         anim_btn_nine = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
 
 //        txt_title.setAnimation(anim_txt_title);
-        btn_musical_notes.setAnimation(anim_btn_musical_notes);
-        btn_extinguisher.setAnimation(anim_btn_extinguisher);
+//        btn_musical_notes.setAnimation(anim_btn_musical_notes);
+//        btn_extinguisher.setAnimation(anim_btn_extinguisher);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -763,6 +788,9 @@ public class MainActivity extends AppCompatActivity {
         });
         sound_btn_zero.start();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ClickOnOne(View view) {
@@ -861,6 +889,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         sound_btn_one.start();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
     }
 
     public void ClickOnTwo(View view) {
@@ -998,6 +1029,9 @@ public class MainActivity extends AppCompatActivity {
         });
         sound_btn_two.start();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ClickOnThree(View view) {
@@ -1124,6 +1158,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         sound_btn_three.start();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
 
     }
 
@@ -1264,6 +1301,9 @@ public class MainActivity extends AppCompatActivity {
         });
         sound_btn_four.start();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ClickOnFive(View view) {
@@ -1400,6 +1440,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         sound_btn_five.start();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
 
     }
 
@@ -1554,6 +1597,9 @@ public class MainActivity extends AppCompatActivity {
         });
         sound_btn_six.start();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ClickOnSeven(View view) {
@@ -1669,6 +1715,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         sound_btn_seven.start();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
 
     }
 
@@ -1839,6 +1888,9 @@ public class MainActivity extends AppCompatActivity {
         });
         sound_btn_eight.start();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ClickOnNine(View view) {
@@ -1992,6 +2044,9 @@ public class MainActivity extends AppCompatActivity {
         });
         sound_btn_nine.start();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ClickOnFireExtinguisher(View view) {
@@ -2016,6 +2071,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 4000);
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void FireExtinguished() {
@@ -2031,6 +2089,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ExtinguihserSound();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
 
     }
 
@@ -2048,6 +2109,9 @@ public class MainActivity extends AppCompatActivity {
 
         Mute();
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void SoundOFF() {
@@ -2063,6 +2127,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Unmute();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
 
     }
 
@@ -2215,6 +2282,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 4800);
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     public void ExtinguihserSound() {
@@ -2237,6 +2307,9 @@ public class MainActivity extends AppCompatActivity {
             amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
         }
 
+        // Navbar-fullscreen
+        hideNavigationBar();
+
     }
 
     private void Unmute() {
@@ -2247,6 +2320,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
         }
+
+        // Navbar-fullscreen
+        hideNavigationBar();
 
     }
 
@@ -2903,25 +2979,97 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void IncludeLayout(View view) {
-        sound_error_prone = MediaPlayer.create(MainActivity.this, R.raw.errorprone);
-        sound_error_prone.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                mediaPlayer.release();
-            }
-        });
-        sound_error_prone.start();
 
-        SetEnableFalse();
+        TransitionManager.beginDelayedTransition(main_layout);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                SetEnableTrue();
+        if (!isIncludeLayoutClicked) {
+            constraintSet_layout_NEW.applyTo(main_layout);
+            isIncludeLayoutClicked = true;
 
-            }
-        }, 2500);
+            // Set them invisible! Why? Because with setVisibility(View.INVISIBLE) it doesn't work and the animation (if there is one active) will continue to show in front...
+            btn_nr_zero.setAlpha(0f);
+            btn_nr_one.setAlpha(0f);
+            btn_nr_two.setAlpha(0f);
+            btn_nr_three.setAlpha(0f);
+            btn_nr_four.setAlpha(0f);
+            btn_nr_five.setAlpha(0f);
+            btn_nr_six.setAlpha(0f);
+            btn_nr_seven.setAlpha(0f);
+            btn_nr_eight.setAlpha(0f);
+            btn_nr_nine.setAlpha(0f);
 
+            btn_nr_zero.setVisibility(View.INVISIBLE);
+            btn_nr_one.setVisibility(View.INVISIBLE);
+            btn_nr_two.setVisibility(View.INVISIBLE);
+            btn_nr_three.setVisibility(View.INVISIBLE);
+            btn_nr_four.setVisibility(View.INVISIBLE);
+            btn_nr_five.setVisibility(View.INVISIBLE);
+            btn_nr_six.setVisibility(View.INVISIBLE);
+            btn_nr_seven.setVisibility(View.INVISIBLE);
+            btn_nr_eight.setVisibility(View.INVISIBLE);
+            btn_nr_nine.setVisibility(View.INVISIBLE);
+            btn_extinguisher.setVisibility(View.INVISIBLE);
+            btn_musical_notes.setVisibility(View.INVISIBLE);
+            txt_support_line_1.setVisibility(View.INVISIBLE);
+            txt_support_line_21.setVisibility(View.INVISIBLE);
+            txt_support_line_22.setVisibility(View.INVISIBLE);
+            txt_support_line_31.setVisibility(View.INVISIBLE);
+            txt_support_line_32.setVisibility(View.INVISIBLE);
+            txt_support_line_41.setVisibility(View.INVISIBLE);
+            txt_support_line_42.setVisibility(View.INVISIBLE);
+            txt_support_line_51.setVisibility(View.INVISIBLE);
+            txt_support_line_52.setVisibility(View.INVISIBLE);
+            txt_support_line_61.setVisibility(View.INVISIBLE);
+            txt_support_line_62.setVisibility(View.INVISIBLE);
+            txt_support_line_71.setVisibility(View.INVISIBLE);
+            txt_support_line_72.setVisibility(View.INVISIBLE);
+            txt_support_line_81.setVisibility(View.INVISIBLE);
+            txt_support_line_82.setVisibility(View.INVISIBLE);
+            txt_support_line_9.setVisibility(View.INVISIBLE);
+            txt_title.setVisibility(View.INVISIBLE);
+            btn_sound_on.setVisibility(View.INVISIBLE);
+
+        } else {
+            constraintSet_layout_OLD.applyTo(main_layout);
+            isIncludeLayoutClicked = false;
+
+            btn_nr_zero.setVisibility(View.VISIBLE);
+            btn_nr_one.setVisibility(View.VISIBLE);
+            btn_nr_two.setVisibility(View.VISIBLE);
+            btn_nr_three.setVisibility(View.VISIBLE);
+            btn_nr_four.setVisibility(View.VISIBLE);
+            btn_nr_five.setVisibility(View.VISIBLE);
+            btn_nr_six.setVisibility(View.VISIBLE);
+            btn_nr_seven.setVisibility(View.VISIBLE);
+            btn_nr_eight.setVisibility(View.VISIBLE);
+            btn_nr_nine.setVisibility(View.VISIBLE);
+            btn_extinguisher.setVisibility(View.VISIBLE);
+            btn_musical_notes.setVisibility(View.VISIBLE);
+            txt_support_line_1.setVisibility(View.VISIBLE);
+            txt_support_line_21.setVisibility(View.VISIBLE);
+            txt_support_line_22.setVisibility(View.VISIBLE);
+            txt_support_line_31.setVisibility(View.VISIBLE);
+            txt_support_line_32.setVisibility(View.VISIBLE);
+            txt_support_line_41.setVisibility(View.VISIBLE);
+            txt_support_line_42.setVisibility(View.VISIBLE);
+            txt_support_line_51.setVisibility(View.VISIBLE);
+            txt_support_line_52.setVisibility(View.VISIBLE);
+            txt_support_line_61.setVisibility(View.VISIBLE);
+            txt_support_line_62.setVisibility(View.VISIBLE);
+            txt_support_line_71.setVisibility(View.VISIBLE);
+            txt_support_line_72.setVisibility(View.VISIBLE);
+            txt_support_line_81.setVisibility(View.VISIBLE);
+            txt_support_line_82.setVisibility(View.VISIBLE);
+            txt_support_line_9.setVisibility(View.VISIBLE);
+            txt_title.setVisibility(View.VISIBLE);
+            btn_sound_on.setVisibility(View.VISIBLE);
+            txt_bar_1.setVisibility(View.INVISIBLE);
+            txt_bar_2.setVisibility(View.INVISIBLE);
+            txt_bar_3.setVisibility(View.INVISIBLE);
+            txt_bar_4.setVisibility(View.INVISIBLE);
+            txt_bar_5.setVisibility(View.INVISIBLE);
+
+        }
     }
 
     public void SetTheBackgroundBlack() {
@@ -2965,7 +3113,6 @@ public class MainActivity extends AppCompatActivity {
 
         btn_extinguisher.setEnabled(false);
         btn_musical_notes.setEnabled(false);
-        include_layout.setEnabled(false);
 
         btn_a_1.setEnabled(false);
         btn_a_2.setEnabled(false);
@@ -3007,7 +3154,6 @@ public class MainActivity extends AppCompatActivity {
 
         btn_extinguisher.setEnabled(true);
         btn_musical_notes.setEnabled(true);
-        include_layout.setEnabled(true);
 
         btn_a_1.setEnabled(true);
         btn_a_2.setEnabled(true);

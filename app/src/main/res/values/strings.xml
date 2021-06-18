@@ -25,4 +25,25 @@
     <string name="str_saxophone">🎷</string>
     <string name="str_drum">🥁</string>
 
+    <string name="str_C">C</string>
+    <string name="str_D">D</string>
+    <string name="str_E">E</string>
+    <string name="str_F">F</string>
+    <string name="str_G">G</string>
+    <string name="str_A">A</string>
+    <string name="str_B">B</string>
+
+    <string name="str_stufflex">STUFFLEX</string>
+
+    <string name="str_s">S</string>
+    <string name="str_t">t</string>
+    <string name="str_u">u</string>
+    <string name="str_f1">f</string>
+    <string name="str_f2">f</string>
+    <string name="str_l">l</string>
+    <string name="str_e">e</string>
+    <string name="str_x">x</string>
+
+    <string name="str_b">b</string>
+    <string name="str_y">y</string>
 </resources>
