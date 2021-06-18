@@ -4,24 +4,21 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.content.Context;
-import android.graphics.Color;
-import android.icu.text.SelectFormat;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Handler;
-import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_sound_on, btn_sound_off, btn_extinguisher, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano,
             btn_nr_zero, btn_nr_one, btn_nr_two, btn_nr_three, btn_nr_four, btn_nr_five, btn_nr_six, btn_nr_seven, btn_nr_eight, btn_nr_nine;
 
-    private TextView txt_title;
+    private TextView txt_title, txt_bar_1, txt_bar_2, txt_bar_3, txt_bar_4, txt_bar_5;
 
     private AnimatorSet setDownAndUp_btn_a_1, setDownAndUp_btn_a_2, setDownAndUp_btn_a_3, setDownAndUp_btn_a_4, setDownAndUp_btn_a_5, setDownAndUp_btn_a_6, setDownAndUp_btn_a_7,
             setDownAndUp_btn_b_1, setDownAndUp_btn_b_2, setDownAndUp_btn_b_3, setDownAndUp_btn_b_4, setDownAndUp_btn_b_5, setDownAndUp_btn_b_6, setDownAndUp_btn_b_7,
@@ -68,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_zero, sound_btn_one, sound_btn_two, sound_btn_three, sound_btn_four, sound_btn_five, sound_btn_six, sound_btn_seven, sound_btn_eight, sound_btn_nine;
 
     private int int_piano = 1, int_drum = 0, int_saxophone = 0, int_trumpet = 0, int_guitar = 0, int_violin = 0;
+
+    private Animation anim_txt_title, anim_btn_musical_notes, anim_btn_extinguisher,
+                anim_btn_zero, anim_btn_one, anim_btn_two, anim_btn_three, anim_btn_four, anim_btn_five, anim_btn_six, anim_btn_seven,
+                anim_btn_eight, anim_btn_nine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
         btn_nr_nine = findViewById(R.id.btn_nr_nine);
 
         txt_title = findViewById(R.id.txt_title);
+        txt_bar_1 = findViewById(R.id.txt_bar_1);
+        txt_bar_2 = findViewById(R.id.txt_bar_2);
+        txt_bar_3 = findViewById(R.id.txt_bar_3);
+        txt_bar_4 = findViewById(R.id.txt_bar_4);
+        txt_bar_5 = findViewById(R.id.txt_bar_5);
 
         include_layout = findViewById(R.id.include_layout);
         main_layout = findViewById(R.id.main_layout);
@@ -138,14 +144,25 @@ public class MainActivity extends AppCompatActivity {
         btn_violin.setVisibility(View.INVISIBLE);
         btn_piano.setVisibility(View.INVISIBLE);
 
+        btn_nr_zero.setVisibility(View.INVISIBLE);
+        btn_nr_one.setVisibility(View.INVISIBLE);
+        btn_nr_two.setVisibility(View.INVISIBLE);
+        btn_nr_three.setVisibility(View.INVISIBLE);
+        btn_nr_four.setVisibility(View.INVISIBLE);
+        btn_nr_five.setVisibility(View.INVISIBLE);
+        btn_nr_six.setVisibility(View.INVISIBLE);
+        btn_nr_seven.setVisibility(View.INVISIBLE);
+        btn_nr_eight.setVisibility(View.INVISIBLE);
+        btn_nr_nine.setVisibility(View.INVISIBLE);
+
         // Click on main_layout for hiding navbar
-        main_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Navbar-fullscreen
-                hideNavigationBar();
-            }
-        });
+//        main_layout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // Navbar-fullscreen
+//                hideNavigationBar();
+//            }
+//        });
 
         // Sound buttons
         btn_sound_on.setOnClickListener(new View.OnClickListener() {
@@ -222,6 +239,150 @@ public class MainActivity extends AppCompatActivity {
 
         setDownAndUp_btn_piano_reverse = new AnimatorSet();
         setDownAndUp_btn_piano_reverse.playSequentially(scaleDown_btn_piano_reverse, scaleUp_btn_piano_reverse);
+
+        // Set animations
+        anim_txt_title = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
+        anim_btn_musical_notes = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
+        anim_btn_extinguisher = AnimationUtils.loadAnimation(this, R.anim.right_to_left);
+        anim_btn_zero = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
+        anim_btn_one = AnimationUtils.loadAnimation(this, R.anim.bounce_left_to_right);
+        anim_btn_two = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_3);
+        anim_btn_three = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_2);
+        anim_btn_four = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_3);
+        anim_btn_five = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_2);
+        anim_btn_six = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_3);
+        anim_btn_seven = AnimationUtils.loadAnimation(this, R.anim.bounce_right_to_left);
+        anim_btn_eight = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
+        anim_btn_nine = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
+
+//        txt_title.setAnimation(anim_txt_title);
+        btn_musical_notes.setAnimation(anim_btn_musical_notes);
+        btn_extinguisher.setAnimation(anim_btn_extinguisher);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_zero.setVisibility(View.VISIBLE);
+                btn_nr_zero.setAnimation(anim_btn_zero);
+
+            }
+        }, 500);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_one.setVisibility(View.VISIBLE);
+                btn_nr_one.setAnimation(anim_btn_one);
+
+            }
+        }, 700);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_two.setVisibility(View.VISIBLE);
+                btn_nr_two.setAnimation(anim_btn_two);
+
+            }
+        }, 900);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_three.setVisibility(View.VISIBLE);
+                btn_nr_three.setAnimation(anim_btn_three);
+
+            }
+        }, 1100);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_four.setVisibility(View.VISIBLE);
+                btn_nr_four.setAnimation(anim_btn_four);
+
+            }
+        }, 1300);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_five.setVisibility(View.VISIBLE);
+                btn_nr_five.setAnimation(anim_btn_five);
+
+            }
+        }, 1500);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_six.setVisibility(View.VISIBLE);
+                btn_nr_six.setAnimation(anim_btn_six);
+
+            }
+        }, 1700);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_seven.setVisibility(View.VISIBLE);
+                btn_nr_seven.setAnimation(anim_btn_seven);
+
+            }
+        }, 1900);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_eight.setVisibility(View.VISIBLE);
+                btn_nr_eight.setAnimation(anim_btn_eight);
+
+            }
+        }, 2100);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_nr_nine.setVisibility(View.VISIBLE);
+                btn_nr_nine.setAnimation(anim_btn_nine);
+
+            }
+        }, 2300);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                txt_bar_1.setVisibility(View.INVISIBLE);
+            }
+        }, 3000);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                txt_bar_2.setVisibility(View.INVISIBLE);
+            }
+        }, 3400);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                txt_bar_3.setVisibility(View.INVISIBLE);
+            }
+        }, 3800);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                txt_bar_4.setVisibility(View.INVISIBLE);
+            }
+        }, 4200);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                txt_bar_5.setVisibility(View.INVISIBLE);
+            }
+        }, 4600);
 
     }
 
@@ -587,7 +748,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero);
+            sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_zero = MediaPlayer.create(MainActivity.this, R.raw.zero_violin);
@@ -686,7 +847,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one);
+            sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_one = MediaPlayer.create(MainActivity.this, R.raw.one_violin);
@@ -822,7 +983,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two);
+            sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_two = MediaPlayer.create(MainActivity.this, R.raw.two_violin);
@@ -949,7 +1110,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three);
+            sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_three = MediaPlayer.create(MainActivity.this, R.raw.three_violin);
@@ -1088,7 +1249,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four);
+            sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_four = MediaPlayer.create(MainActivity.this, R.raw.four_violin);
@@ -1225,7 +1386,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five);
+            sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_five = MediaPlayer.create(MainActivity.this, R.raw.five_violin);
@@ -1378,7 +1539,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six);
+            sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_six = MediaPlayer.create(MainActivity.this, R.raw.six_violin);
@@ -1494,7 +1655,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven);
+            sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_seven = MediaPlayer.create(MainActivity.this, R.raw.seven_violin);
@@ -1663,7 +1824,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight);
+            sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_eight = MediaPlayer.create(MainActivity.this, R.raw.eight_violin);
@@ -1816,7 +1977,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine);
+            sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_nine = MediaPlayer.create(MainActivity.this, R.raw.nine_violin);
@@ -2104,7 +2265,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_1 = MediaPlayer.create(MainActivity.this, R.raw.do1_violin);
@@ -2136,7 +2297,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_2 = MediaPlayer.create(MainActivity.this, R.raw.re1_violin);
@@ -2167,7 +2328,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_3 = MediaPlayer.create(MainActivity.this, R.raw.mi1_violin);
@@ -2198,7 +2359,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_4 = MediaPlayer.create(MainActivity.this, R.raw.fa1_violin);
@@ -2229,7 +2390,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_5 = MediaPlayer.create(MainActivity.this, R.raw.sol1_violin);
@@ -2260,7 +2421,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_6 = MediaPlayer.create(MainActivity.this, R.raw.la1_violin);
@@ -2291,7 +2452,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_a_7 = MediaPlayer.create(MainActivity.this, R.raw.si1_violin);
@@ -2322,7 +2483,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_1 = MediaPlayer.create(MainActivity.this, R.raw.do2_violin);
@@ -2353,7 +2514,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_2 = MediaPlayer.create(MainActivity.this, R.raw.re2_violin);
@@ -2384,7 +2545,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_3 = MediaPlayer.create(MainActivity.this, R.raw.mi2_violin);
@@ -2415,7 +2576,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_4 = MediaPlayer.create(MainActivity.this, R.raw.fa2_violin);
@@ -2446,7 +2607,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_5 = MediaPlayer.create(MainActivity.this, R.raw.sol2_violin);
@@ -2477,7 +2638,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_6 = MediaPlayer.create(MainActivity.this, R.raw.la2_violin);
@@ -2508,7 +2669,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_b_7 = MediaPlayer.create(MainActivity.this, R.raw.si2_violin);
@@ -2539,7 +2700,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_1 = MediaPlayer.create(MainActivity.this, R.raw.do3_violin);
@@ -2570,7 +2731,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_2 = MediaPlayer.create(MainActivity.this, R.raw.re3_violin);
@@ -2601,7 +2762,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_3 = MediaPlayer.create(MainActivity.this, R.raw.mi3_violin);
@@ -2632,7 +2793,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_4 = MediaPlayer.create(MainActivity.this, R.raw.fa3_violin);
@@ -2663,7 +2824,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_5 = MediaPlayer.create(MainActivity.this, R.raw.sol3_violin);
@@ -2694,7 +2855,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_6 = MediaPlayer.create(MainActivity.this, R.raw.la3_violin);
@@ -2725,7 +2886,7 @@ public class MainActivity extends AppCompatActivity {
             sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3_trumpet);
 
         } else if (int_guitar == 1) {
-            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.do1);
+            sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3_guitar);
 
         } else if (int_violin == 1) {
             sound_btn_c_7 = MediaPlayer.create(MainActivity.this, R.raw.si3_violin);
@@ -3130,5 +3291,23 @@ public class MainActivity extends AppCompatActivity {
 
         setDownAndUp_btn_c_7.start();
         btn_c_7.setBackgroundResource(R.drawable.txt_buttons_background);
+    }
+
+    // Restart the app
+    public void Restart(View view){
+        Intent appReset = getIntent();
+        finish();
+        startActivity(appReset);
+
+        Toast toast = Toast.makeText(this, "Restart", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
     }
 }
