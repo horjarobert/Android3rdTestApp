@@ -3,11 +3,13 @@ package com.stufflex.digimotion;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -167,28 +169,21 @@ public class SplashScreenActivity extends AppCompatActivity {
             }
         }, 2200);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                setDownAndUp_img_logo_reverse.start();
-            }
-        }, 3200);
 
         handler_the_special_one = new Handler();
         runnable_the_special_one = new Runnable() {
             @Override
             public void run() {
-                Intent goingOut = new Intent(SplashScreenActivity.this, MainActivity.class);
-                SplashScreenActivity.this.startActivity(goingOut);
-                SplashScreenActivity.this.finish();
+                GoingOut();
             }
         };
-        handler_the_special_one.postDelayed(runnable_the_special_one, 4000);
+        handler_the_special_one.postDelayed(runnable_the_special_one, 3200);
 
         goingOutLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 isTheSpecialOneON = true;
+
                 if (isTheSpecialOneON) {
                     handler_the_special_one.removeCallbacksAndMessages(null);
                     GoingOut();
@@ -220,8 +215,14 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     public void GoingOut() {
+
         Intent goingOut = new Intent(SplashScreenActivity.this, MainActivity.class);
-        SplashScreenActivity.this.startActivity(goingOut);
-        SplashScreenActivity.this.finish();
+
+        Pair[] pairs = new Pair[1];
+        pairs[0] = new Pair<View, String>(img_logo, "outTransition");
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreenActivity.this, pairs);
+
+        startActivity(goingOut, options.toBundle());
     }
 }

@@ -3,6 +3,7 @@ package com.stufflex.digimotion;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -2986,7 +2987,11 @@ public class MainActivity extends AppCompatActivity {
             constraintSet_layout_NEW.applyTo(main_layout);
             isIncludeLayoutClicked = true;
 
-            // Set them invisible! Why? Because with setVisibility(View.INVISIBLE) it doesn't work and the animation (if there is one active) will continue to show in front...
+            /**
+            Set them invisible! Why? Because with setVisibility(View.INVISIBLE) it doesn't work and the animation
+                                                                                        (if there is one active) will continue to show in front...
+            **/
+
             btn_nr_zero.setAlpha(0f);
             btn_nr_one.setAlpha(0f);
             btn_nr_two.setAlpha(0f);
@@ -3447,6 +3452,28 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(this, "Restart", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
+
+        // Toast improvement, never click twice, just once after each 3s
+        long now = System.currentTimeMillis();
+
+        if (lastToastTime + TOAST_TIMEOUT_MS < now) {
+            toast.show();
+            lastToastTime = now;
+        }
+    }
+
+    // Block the backPress button!
+    public void callParentMethod(){
+        getActivity().onBackPressed();
+    }
+
+    private Activity getActivity() {
+        return null;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast toast = Toast.makeText(this, "Can't go back... Thank you!", Toast.LENGTH_SHORT);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
