@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_b_1, btn_b_2, btn_b_3, btn_b_4, btn_b_5, btn_b_6, btn_b_7;
     private Button btn_c_1, btn_c_2, btn_c_3, btn_c_4, btn_c_5, btn_c_6, btn_c_7;
 
-    private Button btn_sound_on, btn_sound_off, btn_extinguisher, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano,
+    private Button btn_sound_on, btn_sound_off, btn_hit, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano,
             btn_nr_zero, btn_nr_one, btn_nr_two, btn_nr_three, btn_nr_four, btn_nr_five, btn_nr_six, btn_nr_seven, btn_nr_eight, btn_nr_nine, btn_eye, btn_eyes;
 
     private TextView txt_title, txt_bar_1, txt_bar_2, txt_bar_3, txt_bar_4, txt_bar_5,
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_sound_on = findViewById(R.id.btn_sound_on);
         btn_sound_off = findViewById(R.id.btn_sound_off);
-        btn_extinguisher = findViewById(R.id.btn_extinguisher);
+        btn_hit = findViewById(R.id.btn_hit);
         btn_musical_notes = findViewById(R.id.btn_musical_notes);
         btn_drum = findViewById(R.id.btn_drum);
         btn_saxophone = findViewById(R.id.btn_saxophone);
@@ -2069,9 +2069,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void ClickOnFireExtinguisher(View view) {
+    public void ClickOnTotalCleaning(View view) {
         SetAnimators();
-        FireExtinguished();
+        TotalCleaning();
 
         Cleaning();
 
@@ -2096,9 +2096,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void FireExtinguished() {
-        Toast toast = Toast.makeText(this, "Fire extinguished...", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+    public void TotalCleaning() {
+        Toast toast = Toast.makeText(this, " Cleaning...", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -2117,7 +2117,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void SoundON() {
         Toast toast = Toast.makeText(this, "Sound OFF", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -2136,7 +2136,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void SoundOFF() {
         Toast toast = Toast.makeText(this, "Sound ON", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3033,7 +3033,7 @@ public class MainActivity extends AppCompatActivity {
             btn_nr_seven.setVisibility(View.INVISIBLE);
             btn_nr_eight.setVisibility(View.INVISIBLE);
             btn_nr_nine.setVisibility(View.INVISIBLE);
-            btn_extinguisher.setVisibility(View.INVISIBLE);
+            btn_hit.setVisibility(View.INVISIBLE);
             btn_musical_notes.setVisibility(View.INVISIBLE);
             txt_support_line_1.setVisibility(View.INVISIBLE);
             txt_support_line_21.setVisibility(View.INVISIBLE);
@@ -3069,7 +3069,7 @@ public class MainActivity extends AppCompatActivity {
             btn_nr_seven.setVisibility(View.VISIBLE);
             btn_nr_eight.setVisibility(View.VISIBLE);
             btn_nr_nine.setVisibility(View.VISIBLE);
-            btn_extinguisher.setVisibility(View.VISIBLE);
+            btn_hit.setVisibility(View.VISIBLE);
             btn_musical_notes.setVisibility(View.VISIBLE);
             txt_support_line_1.setVisibility(View.VISIBLE);
             txt_support_line_21.setVisibility(View.VISIBLE);
@@ -3138,7 +3138,7 @@ public class MainActivity extends AppCompatActivity {
         btn_nr_eight.setEnabled(false);
         btn_nr_nine.setEnabled(false);
 
-        btn_extinguisher.setEnabled(false);
+        btn_hit.setEnabled(false);
         btn_musical_notes.setEnabled(false);
 
         btn_a_1.setEnabled(false);
@@ -3179,7 +3179,7 @@ public class MainActivity extends AppCompatActivity {
         btn_nr_eight.setEnabled(true);
         btn_nr_nine.setEnabled(true);
 
-        btn_extinguisher.setEnabled(true);
+        btn_hit.setEnabled(true);
         btn_musical_notes.setEnabled(true);
 
         btn_a_1.setEnabled(true);
@@ -3219,7 +3219,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast toast = Toast.makeText(this, "Playing a piano", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3251,7 +3251,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast toast = Toast.makeText(this, "Drumming", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3283,7 +3283,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast toast = Toast.makeText(this, "Playing a saxophone", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3315,7 +3315,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast toast = Toast.makeText(this, "Playing a trumpet", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3347,7 +3347,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast toast = Toast.makeText(this, "Playing a guitar", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3379,7 +3379,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Toast toast = Toast.makeText(this, "Playing a violin", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
 
         // Toast improvement, never click twice, just once after each 3s
         long now = System.currentTimeMillis();
@@ -3519,7 +3519,7 @@ public class MainActivity extends AppCompatActivity {
                 "\n\t\t🎯 Also, for your fun, you can play on those instruments by using the main (black) frame (click on margins for fullscreen).\n" +
                 "\n\t\t\uD83D\uDE0E Good to know: each icon has been taken from https://altcodeunicode.com (as unicode characters) and each sound was made in MuseScore 3.\n" +
                 "\n\t\t\uD83D\uDD14 This app is a pilot project and must be treated as such... \uD83D\uDC4D");
-        eye.setPositiveButton(R.string.str_thank_you, new DialogInterface.OnClickListener() {
+        eye.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();

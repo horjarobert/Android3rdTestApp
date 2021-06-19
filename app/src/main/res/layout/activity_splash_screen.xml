@@ -304,8 +304,8 @@
     <!-- BEGIN logo -->
     <ImageView
         android:id="@+id/img_logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:transitionName="outTransition"
         app:layout_constraintBottom_toTopOf="@+id/guideline_ht_5"
         app:layout_constraintEnd_toStartOf="@+id/guideline_vt_5"

@@ -326,12 +326,12 @@
         app:layout_constraintTop_toTopOf="@+id/guideline_ht_95" />
 
     <Button
-        android:id="@+id/btn_extinguisher"
+        android:id="@+id/btn_hit"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/number_buttons_background"
-        android:onClick="ClickOnFireExtinguisher"
-        android:text="@string/str_extinguisher"
+        android:onClick="ClickOnTotalCleaning"
+        android:text="@string/str_hit"
         android:textSize="30sp"
         android:translationZ="2dp"
         android:textAlignment="center"
