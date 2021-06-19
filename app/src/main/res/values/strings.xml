@@ -16,6 +16,11 @@
     <string name="str_sound_off">🔇</string>
     <string name="str_broom">🧹</string>
     <string name="str_extinguisher">🧯</string>
+    <string name="str_inbox">📥</string>
+    <string name="str_satellite">📡</string>
+    <string name="str_eye">👁</string>
+    <string name="str_brain">🧠</string>
+    <string name="str_eyes">👀</string>
 
     <string name="str_musical_notes">🎶</string>
     <string name="str_piano">🎹</string>
@@ -46,4 +51,6 @@
 
     <string name="str_b">b</string>
     <string name="str_y">y</string>
+
+    <string name="str_thank_you">Thank you!</string>
 </resources>

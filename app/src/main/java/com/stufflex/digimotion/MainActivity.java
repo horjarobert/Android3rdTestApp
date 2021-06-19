@@ -6,19 +6,23 @@ import android.animation.AnimatorSet;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.TransitionManager;
 import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -33,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_c_1, btn_c_2, btn_c_3, btn_c_4, btn_c_5, btn_c_6, btn_c_7;
 
     private Button btn_sound_on, btn_sound_off, btn_extinguisher, btn_musical_notes, btn_drum, btn_saxophone, btn_trumpet, btn_guitar, btn_violin, btn_piano,
-            btn_nr_zero, btn_nr_one, btn_nr_two, btn_nr_three, btn_nr_four, btn_nr_five, btn_nr_six, btn_nr_seven, btn_nr_eight, btn_nr_nine;
+            btn_nr_zero, btn_nr_one, btn_nr_two, btn_nr_three, btn_nr_four, btn_nr_five, btn_nr_six, btn_nr_seven, btn_nr_eight, btn_nr_nine, btn_eye, btn_eyes;
 
     private TextView txt_title, txt_bar_1, txt_bar_2, txt_bar_3, txt_bar_4, txt_bar_5,
             txt_support_line_1, txt_support_line_21, txt_support_line_22, txt_support_line_31, txt_support_line_32, txt_support_line_41,
@@ -74,14 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
     private int int_piano = 1, int_drum = 0, int_saxophone = 0, int_trumpet = 0, int_guitar = 0, int_violin = 0;
 
-    private Animation anim_txt_title, anim_btn_musical_notes, anim_btn_extinguisher,
-                anim_btn_zero, anim_btn_one, anim_btn_two, anim_btn_three, anim_btn_four, anim_btn_five, anim_btn_six, anim_btn_seven,
-                anim_btn_eight, anim_btn_nine;
+    private Animation anim_btn_zero, anim_btn_one, anim_btn_two, anim_btn_three, anim_btn_four, anim_btn_five, anim_btn_six, anim_btn_seven, anim_btn_eight, anim_btn_nine;
 
     private ConstraintSet constraintSet_layout_OLD = new ConstraintSet();
     private ConstraintSet constraintSet_layout_NEW = new ConstraintSet();
 
     private Boolean isIncludeLayoutClicked = false;
+
+    private AnimationDrawable animEye;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Navbar-fullscreen
         hideNavigationBar();
+
+        // Disable screenshot option by using FLAG_SECURE
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         // Initializations
         btn_a_1 = findViewById(R.id.btn_a_1);
@@ -126,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
         btn_guitar = findViewById(R.id.btn_guitar);
         btn_violin = findViewById(R.id.btn_violin);
         btn_piano = findViewById(R.id.btn_piano);
+        btn_eye = findViewById(R.id.btn_eye);
+        btn_eyes = findViewById(R.id.btn_eyes);
 
         btn_nr_zero = findViewById(R.id.btn_nr_zero);
         btn_nr_one = findViewById(R.id.btn_nr_one);
@@ -173,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
         btn_guitar.setVisibility(View.INVISIBLE);
         btn_violin.setVisibility(View.INVISIBLE);
         btn_piano.setVisibility(View.INVISIBLE);
+        btn_eye.setVisibility(View.INVISIBLE);
+        btn_eyes.setVisibility(View.INVISIBLE);
 
         btn_nr_zero.setVisibility(View.INVISIBLE);
         btn_nr_one.setVisibility(View.INVISIBLE);
@@ -188,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
         // Clones
         constraintSet_layout_OLD.clone(main_layout);
         constraintSet_layout_NEW.clone(this, R.layout.clone_just_tabulature);
-
 
         // Sound buttons
         btn_sound_on.setOnClickListener(new View.OnClickListener() {
@@ -267,9 +277,6 @@ public class MainActivity extends AppCompatActivity {
         setDownAndUp_btn_piano_reverse.playSequentially(scaleDown_btn_piano_reverse, scaleUp_btn_piano_reverse);
 
         // Set animations
-        anim_txt_title = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
-        anim_btn_musical_notes = AnimationUtils.loadAnimation(this, R.anim.left_to_right);
-        anim_btn_extinguisher = AnimationUtils.loadAnimation(this, R.anim.right_to_left);
         anim_btn_zero = AnimationUtils.loadAnimation(this, R.anim.bounce_left_to_right);
         anim_btn_one = AnimationUtils.loadAnimation(this, R.anim.bounce_left_to_right);
         anim_btn_two = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_3);
@@ -281,9 +288,10 @@ public class MainActivity extends AppCompatActivity {
         anim_btn_eight = AnimationUtils.loadAnimation(this, R.anim.bounce_right_to_left);
         anim_btn_nine = AnimationUtils.loadAnimation(this, R.anim.bounce_bottom_to_up_1);
 
-//        txt_title.setAnimation(anim_txt_title);
-//        btn_musical_notes.setAnimation(anim_btn_musical_notes);
-//        btn_extinguisher.setAnimation(anim_btn_extinguisher);
+        // Awersome animation...
+        animEye = (AnimationDrawable) btn_eye.getBackground();
+        animEye.setEnterFadeDuration(1000);
+        animEye.setExitFadeDuration(1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -409,6 +417,14 @@ public class MainActivity extends AppCompatActivity {
                 txt_bar_5.setVisibility(View.INVISIBLE);
             }
         }, 4600);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                btn_eye.setVisibility(View.VISIBLE);
+                animEye.start();
+            }
+        }, 5000);
 
     }
 
@@ -3033,6 +3049,7 @@ public class MainActivity extends AppCompatActivity {
             txt_support_line_9.setVisibility(View.INVISIBLE);
             txt_title.setVisibility(View.INVISIBLE);
             btn_sound_on.setVisibility(View.INVISIBLE);
+            btn_eye.setVisibility(View.INVISIBLE);
 
         } else {
             constraintSet_layout_OLD.applyTo(main_layout);
@@ -3068,6 +3085,7 @@ public class MainActivity extends AppCompatActivity {
             txt_support_line_9.setVisibility(View.VISIBLE);
             txt_title.setVisibility(View.VISIBLE);
             btn_sound_on.setVisibility(View.VISIBLE);
+            btn_eye.setVisibility(View.VISIBLE);
             txt_bar_1.setVisibility(View.INVISIBLE);
             txt_bar_2.setVisibility(View.INVISIBLE);
             txt_bar_3.setVisibility(View.INVISIBLE);
@@ -3482,5 +3500,33 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             lastToastTime = now;
         }
+    }
+
+    public void ClickOnTheEye(View view) {
+
+        btn_eye.setVisibility(View.INVISIBLE);
+        btn_eyes.setVisibility(View.VISIBLE);
+
+        AlertDialog.Builder eye = new AlertDialog.Builder(MainActivity.this);
+        eye.setTitle("\uD83C\uDFC6 A powerful type of intelligence: synesthesia \uD83C\uDFB6");
+        eye.setMessage("\t\t\uD83C\uDFAF The main purpose of this app is to hear digits's music.\n" +
+                "\n\t\t🎯 It's more than a training, you'll see and hear, at the same time, every digit.\n" +
+                "\n\t\t🎯 You can choose the right instrument sound for your own delight. There is a C key scale from C to B (without halftones).\n" +
+                "\n\t\t🎯 Also, for your fun, you can play on those instruments by using the main (black) frame (click on margins for fullscreen).\n" +
+                "\n\t\t\uD83D\uDE0E Good to know: each icon has been taken from https://altcodeunicode.com (as unicode characters) and each sound was made in MuseScore 3.\n" +
+                "\n\t\t\uD83D\uDD14 This app is a pilot project and must be treated as such... \uD83D\uDC4D");
+        eye.setPositiveButton(R.string.str_thank_you, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                hideNavigationBar();
+
+                btn_eye.setVisibility(View.VISIBLE);
+                btn_eyes.setVisibility(View.INVISIBLE);
+            }
+        }).setCancelable(false).show();
+
+        // Navbar-fullscreen
+        hideNavigationBar();
     }
 }

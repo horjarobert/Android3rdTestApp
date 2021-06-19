@@ -12,4 +12,7 @@
     <color name="black_gray">#5b5b5b</color>
     <color name="pariz">#038aa2</color>
     <color name="greez">#065b0f</color>
+    <color name="ro_blue">#002b7f</color>
+    <color name="ro_yellow">#fcd116</color>
+    <color name="ro_red">#ce1126</color>
 </resources>

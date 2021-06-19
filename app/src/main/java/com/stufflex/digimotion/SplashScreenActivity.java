@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -26,8 +27,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     private Runnable runnable_the_special_one;
     private Boolean isTheSpecialOneON = false;
     private ConstraintLayout goingOutLayout;
-    private Animator scaleDown_img_logo, scaleUp_img_logo, getScaleDown_img_logo_reverse, getScaleUp_img_logo_reverse;
-    private AnimatorSet setDownAndUp_img_logo, setDownAndUp_img_logo_reverse;
+    private Animator scaleDown_img_logo, scaleUp_img_logo;
+    private AnimatorSet setDownAndUp_img_logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,9 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         // Navbar-fullscreen
         hideNavigationBar();
+
+        // Disable screenshot option by using FLAG_SECURE
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
         // Initializations
         txt_b = findViewById(R.id.txt_b);
@@ -88,22 +92,13 @@ public class SplashScreenActivity extends AppCompatActivity {
         setDownAndUp_img_logo = new AnimatorSet();
         setDownAndUp_img_logo.playSequentially(scaleDown_img_logo, scaleUp_img_logo);
 
-        // Special guest | Animation for img_logo | REVERSE
-        getScaleDown_img_logo_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_down);
-
-        getScaleUp_img_logo_reverse = AnimatorInflater.loadAnimator(this, R.animator.scale_up);
-        getScaleUp_img_logo_reverse.setTarget(img_logo);
-
-        setDownAndUp_img_logo_reverse = new AnimatorSet();
-        setDownAndUp_img_logo_reverse.playSequentially(getScaleDown_img_logo_reverse, getScaleUp_img_logo_reverse);
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 txt_s.setVisibility(View.VISIBLE);
                 txt_s.setAnimation(anim_txt_s);
             }
-        }, 500);
+        }, 700);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -111,7 +106,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_t.setVisibility(View.VISIBLE);
                 txt_t.setAnimation(anim_txt_t);
             }
-        }, 600);
+        }, 800);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -119,7 +114,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_u.setVisibility(View.VISIBLE);
                 txt_u.setAnimation(anim_txt_u);
             }
-        }, 700);
+        }, 900);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -127,7 +122,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_f1.setVisibility(View.VISIBLE);
                 txt_f1.setAnimation(anim_txt_f1);
             }
-        }, 800);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -135,7 +130,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_f2.setVisibility(View.VISIBLE);
                 txt_f2.setAnimation(anim_txt_f2);
             }
-        }, 900);
+        }, 1100);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -143,7 +138,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_l.setVisibility(View.VISIBLE);
                 txt_l.setAnimation(anim_txt_l);
             }
-        }, 1000);
+        }, 1200);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -151,7 +146,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_e.setVisibility(View.VISIBLE);
                 txt_e.setAnimation(anim_txt_e);
             }
-        }, 1100);
+        }, 1300);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -159,7 +154,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 txt_x.setVisibility(View.VISIBLE);
                 txt_x.setAnimation(anim_txt_x);
             }
-        }, 1200);
+        }, 1400);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -167,7 +162,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 img_logo.setVisibility(View.VISIBLE);
                 setDownAndUp_img_logo.start();
             }
-        }, 2200);
+        }, 2400);
 
 
         handler_the_special_one = new Handler();
@@ -177,7 +172,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 GoingOut();
             }
         };
-        handler_the_special_one.postDelayed(runnable_the_special_one, 3200);
+        handler_the_special_one.postDelayed(runnable_the_special_one, 3500);
 
         goingOutLayout.setOnClickListener(new View.OnClickListener() {
             @Override
