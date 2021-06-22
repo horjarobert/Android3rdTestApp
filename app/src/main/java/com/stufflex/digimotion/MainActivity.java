@@ -3007,7 +3007,7 @@ public class MainActivity extends AppCompatActivity {
             isIncludeLayoutClicked = true;
 
             /**
-            Set them invisible! Why? Because with setVisibility(View.INVISIBLE) it doesn't work and the animation
+            Set them invisible with setAlpha(0f)! Why? Because with setVisibility(View.INVISIBLE) it doesn't work and the animation
                                                                                         (if there is one active) will continue to show in front...
             **/
 
@@ -3022,6 +3022,13 @@ public class MainActivity extends AppCompatActivity {
             btn_nr_eight.setAlpha(0f);
             btn_nr_nine.setAlpha(0f);
             btn_eye.setAlpha(0f);
+            btn_drum.setAlpha(0f);
+            btn_saxophone.setAlpha(0f);
+            btn_trumpet.setAlpha(0f);
+            btn_guitar.setAlpha(0f);
+            btn_violin.setAlpha(0f);
+            btn_piano.setAlpha(0f);
+            txt_title.setAlpha(0f);
 
             btn_nr_zero.setVisibility(View.INVISIBLE);
             btn_nr_one.setVisibility(View.INVISIBLE);
